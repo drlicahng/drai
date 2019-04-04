@@ -1,0 +1,523 @@
+2019-04-03 08:14:27,604 [Dummy-1:139774273246976] [django.db.backends:90] [utils:execute] [DEBUG]- (0.012) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:14:27,605 [Dummy-1:139774273246976] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:14:30,571 [Dummy-1:139774273246976] [django.db.backends:90] [utils:execute] [DEBUG]- (0.002) SHOW FULL TABLES; args=None
+2019-04-03 08:14:30,574 [Dummy-1:139774273246976] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-04-03 08:16:02,384 [Dummy-1:140109228144384] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:16:02,385 [Dummy-1:140109228144384] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:16:05,497 [Dummy-1:140109228144384] [django.db.backends:90] [utils:execute] [DEBUG]- (0.002) SHOW FULL TABLES; args=None
+2019-04-03 08:16:05,500 [Dummy-1:140109228144384] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-04-03 08:16:16,291 [Thread-2:140108948453120] [django.server:131] [basehttp:log_message] [INFO]- "POST /idface/?idcode=422202198006160057 HTTP/1.1" 200 83
+2019-04-03 08:16:36,576 [Thread-3:140108948453120] [django.server:131] [basehttp:log_message] [INFO]- "GET /hello HTTP/1.1" 301 0
+2019-04-03 08:16:36,614 [Thread-4:140108948453120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:16:36,614 [Thread-4:140108948453120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:16:36,616 [Thread-4:140108948453120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:16:36,619 [Thread-4:140108948453120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:16:36,620 [Thread-4:140108948453120] [django.server:131] [basehttp:log_message] [INFO]- "GET /hello/ HTTP/1.1" 200 2
+2019-04-03 08:18:54,525 [Thread-5:140108948453120] [django.server:131] [basehttp:log_message] [WARNING]- "GET /voice HTTP/1.1" 404 2363
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/wsgiref/handlers.py", line 85, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/handlers.py", line 64, in __call__
+    return super(StaticFilesHandler, self).__call__(environ, start_response)
+  File "/usr/lib/python2.7/site-packages/django/core/handlers/wsgi.py", line 170, in __call__
+    response = self.get_response(request)
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/handlers.py", line 54, in get_response
+    return self.serve(request)
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/handlers.py", line 47, in serve
+    return serve(request, self.file_path(request.path), insecure=True)
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/views.py", line 34, in serve
+    absolute_path = finders.find(normalized_path)
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/finders.py", line 249, in find
+    for finder in get_finders():
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/finders.py", line 264, in get_finders
+    yield get_finder(finder_path)
+  File "/usr/lib/python2.7/site-packages/django/utils/lru_cache.py", line 100, in wrapper
+    result = user_function(*args, **kwds)
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/finders.py", line 277, in get_finder
+    return Finder()
+  File "/usr/lib/python2.7/site-packages/django/contrib/staticfiles/finders.py", line 57, in __init__
+    "Your STATICFILES_DIRS setting is not a tuple or list; "
+ImproperlyConfigured: Your STATICFILES_DIRS setting is not a tuple or list; perhaps you forgot a trailing comma?
+2019-04-03 08:19:49,538 [Thread-7:140108956845824] [django.server:131] [basehttp:log_message] [ERROR]- "GET /voice/ HTTP/1.1" 500 59
+[2019-04-03 08:21:26,596 pyinotify ERROR] The pathname '/home/drers01/python/drconf/settings.py' of this watch <Watch wd=204 path=/home/drers01/python/drconf/settings.py mask=4038 proc_fun=None auto_add=False exclude_filter=<function <lambda> at 0x2d32488> dir=False > has probably changed and couldn't be updated, so it cannot be trusted anymore. To fix this error move directories/files only between watched parents directories, in this case e.g. put a watch on '/home/drers01/python/drconf'.
+[2019-04-03 08:21:26,597 pyinotify ERROR] The pathname '/home/drers01/python/drconf/settings.py' of this watch <Watch wd=48 path=/home/drers01/python/drconf/settings.py mask=4038 proc_fun=None auto_add=False exclude_filter=<function <lambda> at 0x12b7488> dir=False > has probably changed and couldn't be updated, so it cannot be trusted anymore. To fix this error move directories/files only between watched parents directories, in this case e.g. put a watch on '/home/drers01/python/drconf'.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions, sites.
+Run 'python manage.py migrate' to apply them.
+April 03, 2019 - 08:14:30
+Django version 1.10.5, using settings 'drconf.settings'
+Starting development server at http://www.dongrun.info:8080/
+Quit the server with CONTROL-C.
+Performing system checks...
+
+System check identified no issues (0 silenced).
+
+You have 15 unapplied migration(s). Your project may not work properly until you apply the migrations for app(s): admin, auth, contenttypes, sessions, sites.
+Run 'python manage.py migrate' to apply them.
+April 03, 2019 - 08:16:05
+Django version 1.10.5, using settings 'drconf.settings'
+Starting development server at http://www.dongrun.info:9092/
+Quit the server with CONTROL-C.
+2019-04-03 08:21:27,102 [Dummy-1:139703230539520] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:21:27,103 [Dummy-1:139703230539520] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:21:30,093 [Dummy-1:139703230539520] [django.db.backends:90] [utils:execute] [DEBUG]- (0.002) SHOW FULL TABLES; args=None
+2019-04-03 08:21:30,095 [Dummy-1:139703230539520] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+2019-04-03 08:22:14,017 [Dummy-1:140342312576768] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:22:14,018 [Dummy-1:140342312576768] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:22:16,903 [Dummy-1:140342312576768] [django.db.backends:90] [utils:execute] [DEBUG]- (0.002) SHOW FULL TABLES; args=None
+2019-04-03 08:22:16,906 [Dummy-1:140342312576768] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `django_migrations`.`app`, `django_migrations`.`name` FROM `django_migrations`; args=()
+Error: That port is already in use.
+2019-04-03 08:22:31,010 [Thread-2:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET /voice/ HTTP/1.1" 404 1616
+2019-04-03 08:23:10,914 [Thread-4:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /idface/?idcode=422202198006160057 HTTP/1.1" 200 83
+2019-04-03 08:28:06,154 [Thread-5:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:28:06,235 [Thread-6:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:28:06,235 [Thread-6:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:28:06,237 [Thread-6:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:28:06,616 [Thread-6:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:28:06,851 [Thread-7:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/67f25ffc-55ea-11e9-ba37-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:07,021 [Thread-9:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/67f25ffc-55ea-11e9-ba37-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:07,894 [Thread-8:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:28:07,918 [Thread-10:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/67f25ffc-55ea-11e9-ba37-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,031 [Thread-11:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:28:08,031 [Thread-11:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:28:08,033 [Thread-11:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:28:08,093 [Thread-12:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/67f25ffc-55ea-11e9-ba37-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,220 [Thread-13:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/67f25ffc-55ea-11e9-ba37-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,276 [Thread-14:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/67f25ffc-55ea-11e9-ba37-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,378 [Thread-11:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:28:08,444 [Thread-15:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,479 [Thread-16:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,507 [Thread-17:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,572 [Thread-18:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,617 [Thread-19:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:08,653 [Thread-20:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:11,707 [Thread-21:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:11,754 [Thread-22:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:11,852 [Thread-23:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:14,920 [Thread-24:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:14,964 [Thread-25:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:15,036 [Thread-26:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:18,086 [Thread-27:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:18,166 [Thread-28:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:18,223 [Thread-29:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:21,297 [Thread-30:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:21,378 [Thread-31:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:21,438 [Thread-32:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:24,490 [Thread-33:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:24,530 [Thread-34:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:24,577 [Thread-35:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:27,617 [Thread-36:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:27,658 [Thread-37:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:27,704 [Thread-38:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:30,796 [Thread-39:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:30,843 [Thread-40:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:30,881 [Thread-41:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:33,949 [Thread-42:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:33,984 [Thread-43:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:34,038 [Thread-44:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:37,120 [Thread-45:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:37,197 [Thread-46:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:37,235 [Thread-47:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:40,286 [Thread-48:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:40,374 [Thread-49:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:40,427 [Thread-50:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:40,482 [Thread-51:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:40,551 [Thread-52:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:40,586 [Thread-53:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:28:47,618 [Thread-54:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/68ff53fa-55ea-11e9-a2cd-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:29:30,980 [Thread-56:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:29:31,015 [Thread-57:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:29:31,016 [Thread-57:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:29:31,017 [Thread-57:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:29:31,324 [Thread-57:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:29:31,440 [Thread-58:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9a6fcc80-55ea-11e9-92f7-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:31,514 [Thread-59:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9a6fcc80-55ea-11e9-92f7-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:31,566 [Thread-60:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9a6fcc80-55ea-11e9-92f7-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:31,618 [Thread-61:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9a6fcc80-55ea-11e9-92f7-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:32,012 [Thread-63:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9a6fcc80-55ea-11e9-92f7-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:32,513 [Thread-62:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:29:32,530 [Thread-64:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9a6fcc80-55ea-11e9-92f7-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:32,554 [Thread-65:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:29:32,554 [Thread-65:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:29:32,556 [Thread-65:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:29:32,890 [Thread-65:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:29:32,968 [Thread-66:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:33,040 [Thread-67:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:33,067 [Thread-68:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:33,122 [Thread-69:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:33,157 [Thread-70:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:33,224 [Thread-71:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:36,283 [Thread-72:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:36,315 [Thread-73:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:36,399 [Thread-74:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:39,475 [Thread-75:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:39,509 [Thread-76:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:39,552 [Thread-77:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:42,669 [Thread-78:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:42,745 [Thread-79:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:42,826 [Thread-80:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:45,870 [Thread-81:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:45,935 [Thread-82:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:45,971 [Thread-83:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:49,067 [Thread-84:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:49,102 [Thread-85:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:49,143 [Thread-86:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:52,194 [Thread-87:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:52,251 [Thread-88:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:52,311 [Thread-89:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:53,362 [Thread-90:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:55,363 [Thread-92:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:55,406 [Thread-93:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:55,450 [Thread-94:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:58,520 [Thread-95:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:58,551 [Thread-96:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:58,588 [Thread-97:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:29:59,110 [Thread-91:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:30:01,706 [Thread-99:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:01,807 [Thread-100:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:01,878 [Thread-101:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:04,988 [Thread-102:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:05,049 [Thread-103:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:05,184 [Thread-104:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:05,387 [Thread-105:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:05,499 [Thread-106:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:30:05,623 [Thread-107:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET //voice/9b5eb778-55ea-11e9-bc36-6c92bf4f8706.wav HTTP/1.1" 404 2489
+2019-04-03 08:36:05,222 [Thread-108:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:05,261 [Thread-109:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:05,262 [Thread-109:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:05,263 [Thread-109:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:05,569 [Thread-109:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:05,685 [Thread-110:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/856cdac0-55eb-11e9-9f3d-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:05,827 [Thread-111:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/856cdac0-55eb-11e9-9f3d-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:06,727 [Thread-112:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:06,762 [Thread-113:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:06,763 [Thread-113:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:06,764 [Thread-113:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:07,038 [Thread-113:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:07,093 [Thread-114:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/864cf290-55eb-11e9-bab2-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:07,242 [Thread-115:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/864cf290-55eb-11e9-bab2-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:14,157 [Thread-116:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:14,198 [Thread-117:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:14,199 [Thread-117:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:14,200 [Thread-117:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:14,499 [Thread-117:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:14,564 [Thread-118:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8abf5b42-55eb-11e9-9f7f-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:15,058 [Thread-120:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8abf5b42-55eb-11e9-9f7f-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:15,562 [Thread-119:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:15,602 [Thread-121:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:15,603 [Thread-121:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:15,604 [Thread-121:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:15,936 [Thread-121:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:15,991 [Thread-122:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8b9ab354-55eb-11e9-b6b8-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:16,112 [Thread-123:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8b9ab354-55eb-11e9-b6b8-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:17,033 [Thread-124:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:17,086 [Thread-125:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:17,086 [Thread-125:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:17,087 [Thread-125:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:17,374 [Thread-125:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:17,431 [Thread-126:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8c762736-55eb-11e9-9399-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:17,560 [Thread-127:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8c762736-55eb-11e9-9399-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:18,960 [Thread-128:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:19,037 [Thread-129:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:19,038 [Thread-129:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:19,045 [Thread-129:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.001) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:19,342 [Thread-129:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:19,400 [Thread-130:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8da2616a-55eb-11e9-b59d-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:19,520 [Thread-131:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8da2616a-55eb-11e9-b59d-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:20,411 [Thread-132:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:20,460 [Thread-133:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:20,461 [Thread-133:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:20,462 [Thread-133:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:20,772 [Thread-133:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:20,836 [Thread-134:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8e7c9a2e-55eb-11e9-aa53-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:21,331 [Thread-136:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8e7c9a2e-55eb-11e9-aa53-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:21,864 [Thread-135:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:21,906 [Thread-137:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:21,906 [Thread-137:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:21,908 [Thread-137:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:22,192 [Thread-137:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:22,245 [Thread-138:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8f5546da-55eb-11e9-bb0b-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:22,747 [Thread-140:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/8f5546da-55eb-11e9-bb0b-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:23,259 [Thread-139:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:23,312 [Thread-141:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:23,312 [Thread-141:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:23,314 [Thread-141:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:23,773 [Thread-141:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:23,831 [Thread-142:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/904692b0-55eb-11e9-8c1b-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:23,945 [Thread-143:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/904692b0-55eb-11e9-8c1b-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:25,827 [Thread-144:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:25,884 [Thread-145:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:25,884 [Thread-145:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:25,886 [Thread-145:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:26,223 [Thread-145:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:26,277 [Thread-146:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/91bc57ba-55eb-11e9-b1bf-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:26,534 [Thread-147:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/91bc57ba-55eb-11e9-b1bf-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:33,977 [Thread-148:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:36:34,012 [Thread-149:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:34,012 [Thread-149:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:34,014 [Thread-149:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:34,297 [Thread-149:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:34,352 [Thread-150:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/968c5dda-55eb-11e9-88f9-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:34,475 [Thread-151:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/968c5dda-55eb-11e9-88f9-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:35,425 [Thread-152:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:35,473 [Thread-153:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:35,477 [Thread-153:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:35,478 [Thread-153:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:35,701 [Thread-153:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:35,761 [Thread-154:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/9762949a-55eb-11e9-9e87-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:35,888 [Thread-156:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/9762949a-55eb-11e9-9e87-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:36,718 [Thread-155:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:36:36,753 [Thread-157:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:36:36,754 [Thread-157:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:36:36,755 [Thread-157:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:36:37,059 [Thread-157:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:36:37,123 [Thread-158:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/9831c346-55eb-11e9-a393-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:36:37,249 [Thread-159:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/9831c346-55eb-11e9-a393-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:11,492 [Thread-160:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:37:11,590 [Thread-161:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:37:11,591 [Thread-161:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:37:11,610 [Thread-161:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:37:11,937 [Thread-161:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:37:11,992 [Thread-162:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/acfbc362-55eb-11e9-9690-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:12,115 [Thread-163:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/acfbc362-55eb-11e9-9690-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:13,076 [Thread-164:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:37:13,123 [Thread-165:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:37:13,123 [Thread-165:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:37:13,125 [Thread-165:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:37:13,531 [Thread-165:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:37:13,590 [Thread-166:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/adef0496-55eb-11e9-ad8d-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:13,749 [Thread-167:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/adef0496-55eb-11e9-ad8d-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:43,968 [Thread-168:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:37:44,032 [Thread-169:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:37:44,033 [Thread-169:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:37:44,034 [Thread-169:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:37:44,359 [Thread-169:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:37:44,445 [Thread-170:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c04f091a-55eb-11e9-a7b7-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:44,574 [Thread-172:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c04f091a-55eb-11e9-a7b7-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:45,465 [Thread-171:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:37:45,521 [Thread-173:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:37:45,521 [Thread-173:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:37:45,523 [Thread-173:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:37:45,750 [Thread-173:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:37:45,823 [Thread-174:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c1232f9c-55eb-11e9-924a-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:37:45,960 [Thread-175:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c1232f9c-55eb-11e9-924a-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:42:14,404 [Thread-176:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:42:14,440 [Thread-177:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:42:14,441 [Thread-177:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:42:14,442 [Thread-177:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:42:14,688 [Thread-177:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:42:14,789 [Thread-178:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/616fdc48-55ec-11e9-ae07-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:42:14,924 [Thread-179:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/616fdc48-55ec-11e9-ae07-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:42:15,823 [Thread-180:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 101
+2019-04-03 08:42:15,884 [Thread-181:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:42:15,884 [Thread-181:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:42:15,886 [Thread-181:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:42:16,163 [Thread-181:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:42:16,218 [Thread-182:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/62510664-55ec-11e9-b3f0-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:42:16,364 [Thread-183:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/62510664-55ec-11e9-b3f0-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:44:57,031 [Thread-184:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:44:57,085 [Thread-185:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:44:57,085 [Thread-185:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:44:57,086 [Thread-185:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:44:57,396 [Thread-185:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:44:57,510 [Thread-186:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c26b3ea2-55ec-11e9-9c3f-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:44:57,662 [Thread-188:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c26b3ea2-55ec-11e9-9c3f-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:44:58,548 [Thread-187:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:44:58,548 [Thread-187:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:44:58,550 [Thread-187:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:44:58,553 [Thread-187:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:44:58,554 [Thread-187:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:44:58,655 [Thread-189:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:44:58,656 [Thread-189:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:44:58,657 [Thread-189:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:44:58,920 [Thread-189:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:44:59,078 [Thread-190:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c353acd2-55ec-11e9-804e-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:44:59,228 [Thread-191:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c353acd2-55ec-11e9-804e-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:06,694 [Thread-192:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:06,694 [Thread-192:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:06,696 [Thread-192:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+/usr/lib/python2.7/site-packages/django/db/models/base.py:310: RuntimeWarning: Model 'drers.maintenanceperson' was already registered. Reloading models is not advised as it can lead to inconsistencies, most notably with related models.
+  new_class._meta.apps.register_model(new_class._meta.app_label, new_class)
+2019-04-03 08:45:06,700 [Thread-192:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:45:06,701 [Thread-192:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:45:06,752 [Thread-193:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:06,752 [Thread-193:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:06,754 [Thread-193:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.001) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:45:06,962 [Thread-193:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:45:07,081 [Thread-194:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c81ee81c-55ec-11e9-9622-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:07,250 [Thread-195:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/c81ee81c-55ec-11e9-9622-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:13,633 [Thread-196:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:13,634 [Thread-196:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:13,635 [Thread-196:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:45:13,638 [Thread-196:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:45:13,639 [Thread-196:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:45:13,696 [Thread-197:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:13,696 [Thread-197:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:13,698 [Thread-197:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:45:13,945 [Thread-197:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:45:14,057 [Thread-198:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/cc48671a-55ec-11e9-875a-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:14,221 [Thread-199:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/cc48671a-55ec-11e9-875a-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:22,514 [Thread-200:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:22,515 [Thread-200:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:22,516 [Thread-200:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:45:22,520 [Thread-200:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:45:22,521 [Thread-200:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:45:22,561 [Thread-201:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:22,561 [Thread-201:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:22,563 [Thread-201:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:45:22,826 [Thread-201:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:45:22,917 [Thread-202:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d1938c86-55ec-11e9-a3fb-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:23,069 [Thread-203:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d1938c86-55ec-11e9-a3fb-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:28,234 [Thread-204:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:45:28,276 [Thread-205:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:28,277 [Thread-205:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:28,278 [Thread-205:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:45:28,571 [Thread-205:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:45:28,666 [Thread-206:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d5000b74-55ec-11e9-b884-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:45:28,848 [Thread-207:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d5000b74-55ec-11e9-b884-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:45:29,932 [Thread-208:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:29,933 [Thread-208:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:29,935 [Thread-208:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:45:29,938 [Thread-208:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:45:29,939 [Thread-208:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:45:29,993 [Thread-209:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:29,994 [Thread-209:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:29,995 [Thread-209:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:45:30,244 [Thread-209:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:45:30,362 [Thread-210:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d5ff5e80-55ec-11e9-932e-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:30,515 [Thread-211:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d5ff5e80-55ec-11e9-932e-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:35,478 [Thread-212:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:35,478 [Thread-212:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:35,480 [Thread-212:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:45:35,484 [Thread-212:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:45:35,485 [Thread-212:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:45:35,528 [Thread-213:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:35,529 [Thread-213:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:35,530 [Thread-213:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:45:35,806 [Thread-213:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:45:35,910 [Thread-214:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d95028b2-55ec-11e9-8038-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:36,043 [Thread-215:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/d95028b2-55ec-11e9-8038-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:39,441 [Thread-216:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:39,441 [Thread-216:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:39,443 [Thread-216:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:45:39,446 [Thread-216:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:45:39,447 [Thread-216:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:45:39,514 [Thread-217:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:45:39,515 [Thread-217:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:45:39,516 [Thread-217:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:45:39,810 [Thread-217:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:45:40,129 [Thread-218:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/dbb2ff08-55ec-11e9-952a-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:45:40,272 [Thread-219:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/dbb2ff08-55ec-11e9-952a-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:53:38,784 [Thread-220:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 129
+2019-04-03 08:53:38,913 [Thread-221:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:53:38,914 [Thread-221:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:53:38,915 [Thread-221:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:53:39,231 [Thread-221:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:53:39,399 [Thread-222:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/f974ea14-55ed-11e9-85c4-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:53:39,683 [Thread-223:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/f974ea14-55ed-11e9-85c4-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:13,398 [Thread-224:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:54:13,498 [Thread-225:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:54:13,498 [Thread-225:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:54:13,500 [Thread-225:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:54:13,817 [Thread-225:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:54:13,889 [Thread-226:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/0e124872-55ee-11e9-a3a1-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:14,007 [Thread-227:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/0e124872-55ee-11e9-a3a1-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:17,302 [Thread-228:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:54:17,390 [Thread-229:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:54:17,390 [Thread-229:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:54:17,392 [Thread-229:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:54:17,809 [Thread-229:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:54:17,921 [Thread-230:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/10736efc-55ee-11e9-9f87-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:18,066 [Thread-232:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/10736efc-55ee-11e9-9f87-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:18,473 [Thread-231:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:54:18,515 [Thread-233:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:54:18,515 [Thread-233:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:54:18,517 [Thread-233:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:54:18,812 [Thread-233:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:54:18,951 [Thread-234:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/110c7638-55ee-11e9-95d9-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:19,086 [Thread-235:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/110c7638-55ee-11e9-95d9-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:19,811 [Thread-236:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:54:19,846 [Thread-237:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:54:19,846 [Thread-237:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:54:19,848 [Thread-237:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:54:20,165 [Thread-237:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:54:20,277 [Thread-238:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/11dad7ee-55ee-11e9-bfc9-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:20,427 [Thread-239:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/11dad7ee-55ee-11e9-bfc9-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:23,331 [Thread-240:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 129
+2019-04-03 08:54:23,447 [Thread-241:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:54:23,460 [Thread-241:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.012) SELECT VERSION(); args=None
+2019-04-03 08:54:23,478 [Thread-241:139702325733120] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:54:23,804 [Thread-241:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:54:23,860 [Thread-242:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/1406305e-55ee-11e9-aac8-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:24,408 [Thread-243:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:54:24,419 [Thread-244:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/1406305e-55ee-11e9-aac8-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:24,611 [Thread-245:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:54:24,611 [Thread-245:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:54:24,613 [Thread-245:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:54:24,950 [Thread-245:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:54:25,001 [Thread-246:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/14b4f864-55ee-11e9-8597-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:54:25,129 [Thread-247:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/14b4f864-55ee-11e9-8597-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:56:37,256 [Thread-248:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:56:37,387 [Thread-249:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:56:37,389 [Thread-249:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:56:37,390 [Thread-249:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:56:37,702 [Thread-249:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:56:37,892 [Thread-250:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/63d566fe-55ee-11e9-9564-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:56:38,096 [Thread-252:139702325733120] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/63d566fe-55ee-11e9-9564-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:56:38,948 [Thread-251:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:56:38,948 [Thread-251:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:56:38,950 [Thread-251:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:56:38,953 [Thread-251:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:56:38,954 [Thread-251:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:56:39,023 [Thread-253:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:56:39,024 [Thread-253:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:56:39,025 [Thread-253:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:56:39,211 [Thread-253:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:56:39,292 [Thread-254:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/64bbab46-55ee-11e9-98e4-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:56:39,436 [Thread-255:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/64bbab46-55ee-11e9-98e4-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:56:47,383 [Thread-256:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:56:47,383 [Thread-256:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:56:47,385 [Thread-256:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:56:47,388 [Thread-256:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:56:47,389 [Thread-256:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:56:47,519 [Thread-257:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:56:47,521 [Thread-257:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:56:47,522 [Thread-257:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:56:47,783 [Thread-257:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:56:47,961 [Thread-258:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/69d79496-55ee-11e9-9395-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:56:48,099 [Thread-259:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/69d79496-55ee-11e9-9395-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:56:55,900 [Thread-260:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:56:56,009 [Thread-261:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:56:56,009 [Thread-261:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:56:56,010 [Thread-261:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:56:56,319 [Thread-261:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:56:56,478 [Thread-262:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/6eee12b6-55ee-11e9-b2f7-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:56:56,659 [Thread-263:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/6eee12b6-55ee-11e9-b2f7-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:57:03,835 [Thread-264:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 129
+2019-04-03 08:57:03,885 [Thread-265:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:57:03,885 [Thread-265:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:57:03,887 [Thread-265:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:57:04,255 [Thread-265:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:57:04,420 [Thread-266:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/73a90f68-55ee-11e9-9f0a-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:57:04,621 [Thread-267:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/73a90f68-55ee-11e9-9f0a-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:57:07,365 [Thread-268:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 67
+2019-04-03 08:57:07,403 [Thread-269:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:57:07,403 [Thread-269:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:57:07,405 [Thread-269:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:57:07,713 [Thread-269:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:57:07,796 [Thread-270:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/75b8ae80-55ee-11e9-a84b-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:57:07,962 [Thread-271:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/75b8ae80-55ee-11e9-a84b-6c92bf4f8706.wav HTTP/1.1" 200 9936
+2019-04-03 08:57:09,014 [Thread-272:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:57:09,015 [Thread-272:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:57:09,016 [Thread-272:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'ICBC' AND `bankcodetable`.`mark` = 'MAINTER'); args=('ICBC', 'MAINTER')
+2019-04-03 08:57:09,019 [Thread-272:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.001) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '422202198006160057'; args=('422202198006160057',)
+2019-04-03 08:57:09,020 [Thread-272:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceUpload/ HTTP/1.1" 200 128
+2019-04-03 08:57:09,112 [Thread-273:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-04-03 08:57:09,113 [Thread-273:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-04-03 08:57:09,114 [Thread-273:139702950258432] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-04-03 08:57:09,362 [Thread-273:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
+2019-04-03 08:57:09,438 [Thread-274:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/76b45442-55ee-11e9-b1eb-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-03 08:57:09,591 [Thread-275:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/76b45442-55ee-11e9-b1eb-6c92bf4f8706.wav HTTP/1.1" 200 7776
