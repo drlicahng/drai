@@ -521,3 +521,35 @@ Error: That port is already in use.
 2019-04-03 08:57:09,362 [Thread-273:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "POST /local.a/ HTTP/1.1" 200 73
 2019-04-03 08:57:09,438 [Thread-274:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/76b45442-55ee-11e9-b1eb-6c92bf4f8706.wav HTTP/1.1" 200 7776
 2019-04-03 08:57:09,591 [Thread-275:139702950258432] [django.server:131] [basehttp:log_message] [INFO]- "GET /voice/76b45442-55ee-11e9-b1eb-6c92bf4f8706.wav HTTP/1.1" 200 7776
+2019-04-06 19:47:34,167 [Thread-277:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.123cha.com/ HTTP/1.1" 404 1664
+2019-04-06 19:47:34,177 [Thread-281:139702296270592] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.boxun.com/ HTTP/1.1" 404 1660
+2019-04-06 19:47:34,194 [Thread-280:139702304663296] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.epochtimes.com/ HTTP/1.1" 404 1680
+2019-04-06 19:47:34,213 [Thread-279:139702313056000] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.bing.com/ HTTP/1.1" 404 1656
+2019-04-06 19:47:34,221 [Thread-282:139702287877888] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://wujieliulan.com/ HTTP/1.1" 404 1668
+2019-04-06 19:47:34,257 [Thread-284:139702296270592] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.minghui.org/ HTTP/1.1" 404 1668
+2019-04-06 19:47:34,271 [Thread-278:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.baidu.com/ HTTP/1.1" 404 1660
+2019-04-06 19:47:34,283 [Thread-285:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.rfa.org/ HTTP/1.1" 404 1652
+2019-04-06 19:47:34,403 [Thread-283:139702279485184] [django.server:131] [basehttp:log_message] [WARNING]- "CONNECT www.voanews.com:443 HTTP/1.0" 404 1665
+Traceback (most recent call last):
+  File "/usr/lib64/python2.7/SocketServer.py", line 593, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib64/python2.7/SocketServer.py", line 334, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/usr/lib64/python2.7/SocketServer.py", line 649, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/site-packages/django/core/servers/basehttp.py", line 159, in handle
+    self.raw_requestline = self.rfile.readline(65537)
+  File "/usr/lib64/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+error: [Errno 104] Connection reset by peer
+2019-04-08 01:19:34,005 [Thread-287:139702279485184] [django.server:131] [basehttp:log_message] [INFO]- code 400, message Bad request syntax ('^]')
+2019-04-08 01:19:34,006 [Thread-287:139702279485184] [django.server:131] [basehttp:log_message] [WARNING]- "^]" 400 -
+2019-04-08 01:47:11,587 [Thread-289:139702279485184] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.baidu.com/ HTTP/1.1" 404 1660
+2019-04-08 01:47:11,591 [Thread-290:139702950258432] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.epochtimes.com/ HTTP/1.1" 404 1680
+2019-04-08 01:47:11,595 [Thread-291:139702325733120] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.123cha.com/ HTTP/1.1" 404 1664
+2019-04-08 01:47:11,603 [Thread-292:139702296270592] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.rfa.org/ HTTP/1.1" 404 1652
+2019-04-08 01:47:11,607 [Thread-297:139701520426752] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://wujieliulan.com/ HTTP/1.1" 404 1668
+2019-04-08 01:47:11,614 [Thread-295:139702287877888] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.minghui.org/ HTTP/1.1" 404 1668
+2019-04-08 01:47:11,620 [Thread-293:139702313056000] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.bing.com/ HTTP/1.1" 404 1656
+2019-04-08 01:47:11,631 [Thread-294:139702304663296] [django.server:131] [basehttp:log_message] [WARNING]- "GET http://www.boxun.com/ HTTP/1.1" 404 1660
+2019-04-08 01:47:11,656 [Thread-296:139701528819456] [django.server:131] [basehttp:log_message] [WARNING]- "CONNECT www.voanews.com:443 HTTP/1.0" 404 1665
