@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script>
+			  function let()
+			  {
+			  		var f = document.getElementById("test");
+			  		var content = "你好,牛批";
+			  		content = encodeURI(content);
+			  		f.action = "http://192.168.66.108/bi/local.a/";
+			  		//document.write(f.action)
+			  		f.submit();
+			  }
+		 </script>
+	</head>
+<body onload="">
+	
+<form id="test" action="/bi/local.a/" method="post">
+      <input name="content" value="hello"> 
+      <input type="submit">        
+</form>
+</body>
+</html>

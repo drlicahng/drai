@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 from django.http import HttpResponse
+from django.shortcuts import render
 from web import utils
 from drers import models
 import logging
@@ -17,3 +18,7 @@ def hello(request):
 		log.debug('fail:%s'%e)
 		return HttpResponse('fail')
 	return HttpResponse('ok')
+
+
+def index(request):
+	return render(request , 'index.html')

@@ -5,6 +5,7 @@ from web import http
 from drers import doUpload
 urlpatterns = [
 	url('^hello/$',index.hello),
+	url('^index/$',index.index),
 	url('^upload.dr/$',http.idImageUpload),
 	url('^getVoice/$',voice.getVoice),
 	url('^faceUpload/$',doUpload.faceImg),
