@@ -1,12 +1,13 @@
 from django.conf.urls import *
 import index
-import local
+from drers import voice
 from web import http
-from web import doUpload
+from drers import doUpload
 urlpatterns = [
 	url('^hello/$',index.hello),
 	url('^upload.dr/$',http.idImageUpload),
-	url('^local.a/$',local.hello),
+	url('^getVoice/$',voice.getVoice),
 	url('^faceUpload/$',doUpload.faceImg),
 	url('^idface/$',doUpload.idFaceImg),
+	url('^confirmNewFace/$',doUpload.confirmNewFace),
 ]

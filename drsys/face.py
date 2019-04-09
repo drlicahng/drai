@@ -15,6 +15,8 @@ import time
 import logging
 from drconf import dr
 import shutil
+from drsys import syntask
+import trainer
 
 
 reload(sys)
@@ -25,6 +27,11 @@ log = logging.getLogger(dr.TAG)
 
 train_file = '%s/trained_knn_model.clf'%dr.FACE_BASE
 
+
+def _train():
+	log.debug("Training KNN classifier...")
+	classifier = trainer._init_train("faceset", model_save_path="%s/trained_knn_model.clf"%dr.PROJECT_BASE, n_neighbors=2)
+	log.debug("Training complete!")
 
 def pickFaceFromBytes(data):
 	pilImage = Image.open(BytesIO(data))
