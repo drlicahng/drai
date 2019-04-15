@@ -48,6 +48,12 @@ def faceImg(request):
 			tmpFilename = '%s.jpg'%(uuid.uuid1())
 			savePath = '%s/%s'%(dr.FACETMP,tmpFilename)
 			
+
+			#get idcode param
+			req_param_idcode = request.GET.get('idcode')
+			log.debug('request param idcode = %s'%req_param_idcode)			
+			
+				
 			#face pick and store tmp file\
 			imgData = img.read()
 			faceimg = face.pickFaceFromBytes(imgData)
@@ -65,6 +71,7 @@ def faceImg(request):
 				msg = {"ret":"fail","msg":"%s"%ret}
 			else:
 				retName = models.queryEngineerNameByIdno('drjf',ret)
+				retName = retName.encode(dr.ENCODING)
 				msg = {"ret":"succ","msg":"%s"%retName,"idcode":"%s"%ret,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
 				
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
