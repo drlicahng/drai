@@ -37,6 +37,7 @@ class MaintenancePerson(models.Model):
 
 
 
+
 class BankCodeTable(models.Model):
 	class Meta:
 		db_table = 'bankcodetable'
@@ -50,6 +51,22 @@ class BankCodeTable(models.Model):
 	content = models.CharField(max_length=100)
 
 
+
+class Terminal(models.Model):
+	class Meta:
+		db_table = 'departterminal'
+	
+
+	tid = models.AutoField(primary_key=True , db_column='id')
+	departId = models.IntegerField()
+	terminalId = models.CharField(max_length=40)
+	content = models.CharField(max_length=100)
+	mac = models.CharField(max_length=40)
+	bankCode = models.CharField(max_length=10)
+	bigVer = models.IntegerField()
+	shortVer = models.IntegerField()
+	departTreeId = models.CharField(max_length=255)
+	lastAccessTime = models.CharField(max_length=30)
 
 '''
 
@@ -97,4 +114,22 @@ def queryTableNameByCode(code  , identity):
 		log.debug('[2]query fail:%s'%err)
 		return ''	
 	
+
+def queryTableNameByTerminalId(terminalId  , identity):
+	try:
+		terminals = Terminal.objects.filter(terminalId=terminalId)
+		if len(terminals) > 0 :
+			#log.debug('[DBQUERY]tablename=%s'%l[0].tableName );
+			l = BankCodeTable.objects.filter(bankCode=terminals[0].bankCode , mark=identity)
+			if len(l) > 0 :
+				return l[0].tableName
+			else:
+				return ''
+		else:
+			log.debug('[DBQUERY]no record')
+			return ''
+	except Exception , err:
+		log.debug('[2]query fail:%s'%err)
+		return ''	
+
 

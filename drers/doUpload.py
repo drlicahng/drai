@@ -52,7 +52,9 @@ def faceImg(request):
 			#get idcode param
 			req_param_idcode = request.GET.get('idcode')
 			log.debug('request param idcode = %s'%req_param_idcode)			
-			
+			#get terminalId param
+			req_param_terminalId = request.GET.get('terminalId')
+			log.debug('request param terminalId = %s'%req_param_terminalId)
 				
 			#face pick and store tmp file\
 			imgData = img.read()
@@ -70,7 +72,7 @@ def faceImg(request):
 				
 				msg = {"ret":"fail","msg":"%s"%ret}
 			else:
-				retName = models.queryEngineerNameByIdno('drjf',ret)
+				retName = models.queryEngineerNameByIdno(req_param_terminalId,ret)
 				retName = retName.encode(dr.ENCODING)
 				msg = {"ret":"succ","msg":"%s"%retName,"idcode":"%s"%ret,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
 				
