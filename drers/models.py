@@ -77,11 +77,11 @@ table 's service function
 
 
 
-
-def queryEngineerNameByIdno(bankCode , idcode):
+#update
+def queryEngineerNameByIdno(terminalId , idcode):
 	try:
 		log.debug('[DBQUERY]query engineer by idcode = %s'%idcode)
-		tablename =queryTableNameByCode(bankCode,'MAINTER')
+		tablename =queryTableNameByTerminalId(terminalId,'MAINTER')
 		tablename = tablename.encode('utf-8')
 		log.debug('tablename=%s'%tablename)
 		m = MaintenancePerson.new(tablename)
