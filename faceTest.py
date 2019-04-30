@@ -1,14 +1,20 @@
-from drconf import single
+from drconf import single,dr
 import cv2
 from PIL import Image
 from drsys import face
-from models.faceid import Face
+from cnn import Model,CNN_MODEL_FILE
 
-im = cv2.imread('/home/dr/idcode.bmp',1)
 
-img = Image.fromarray(im.astype('uint8')).convert('RGB')
+model = Model()
+model.load_model(file_path=CNN_MODEL_FILE)
 
-f = Face(idcode='422202198006160057');
-f.img = img
-f.save()
+faceimg = face.pickFaceFromFile('/home/dr/szx.jpg')
+
+faceimg = cv2.resize(faceimg , (64,64))
+
+faceid = model.face_predict(faceimg)
+
+print faceid
+
+
 #face.saveImage(f.img,'/home/dr/t.bmp')

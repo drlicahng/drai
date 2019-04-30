@@ -170,7 +170,7 @@ LOGGING = {
             'propagate': False
         },
         'DR': {
-            'handlers': ['DRH','error'],
+            'handlers': ['DRH','error','console'],
             'level': 'DEBUG',
             'propagate': True
         },

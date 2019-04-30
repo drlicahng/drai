@@ -13,7 +13,7 @@ def getVoice(request):
 	logger.debug("request in ")
 	logger.debug(request.method)
 	if request.method == 'POST':
-		content = request.POST['content']
+		content = request.POST.get('content')
 	 	logger.debug(content)
 
 	 	token = voice.getToken()
@@ -44,7 +44,7 @@ def getVoice(request):
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		
 	else:
-		content = request.GET['content']
+		content = request.GET.get('content')
 	 	logger.debug(content)
 
 	 	token = voice.getToken()

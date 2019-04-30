@@ -1,1 +1,1 @@
-__all__ = ['face','voice','utils','syntask']
+__all__ = ['face','voice','utils','syntask','cnn','drdlib']

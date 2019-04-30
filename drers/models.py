@@ -1,10 +1,45 @@
-# -*- encoding:utf-8 -*-
+# -*- coding:utf8 -*-
 from django.db import models
 import logging
 from drconf import dr
 log = logging.getLogger(dr.TAG)
 
  
+
+class SysOrgan(models.Model):
+	class Meta:
+		db_table = 'departments'
+	id = models.AutoField(primary_key=True , db_column='id')
+	departmentId = models.OneToOneField('SysOrgan' , to_field='id')
+	name = models.CharField(max_length=60)
+	sort = models.IntegerField()
+	address = models.CharField(max_length=100)
+	header = models.CharField(max_length=50)
+	mobile = models.CharField(max_length=50)
+	phone = models.CharField(max_length=50)
+	bankCode = models.CharField(max_length=10)
+	treeId = models.CharField(max_length=255)
+	appId = models.CharField(max_length=60)
+	secret = models.CharField(max_length=100)
+
+class SysUser(models.Model):
+	class Meta:
+		db_table = 'users'
+	
+
+	id = models.AutoField(primary_key=True , db_column='id')
+	departmentId = models.OneToOneField('SysOrgan' , to_field='id')
+	name = models.CharField(max_length=50)
+	sex = models.CharField(max_length=10)
+	login = models.CharField(max_length=50)
+	password = models.CharField(max_length=50)
+	moNumber = models.CharField(max_length=50)
+	shortNumber = models.CharField(max_length=50)
+	inTime = models.DateTimeField()
+	outTime = models.DateTimeField()
+	roleIds = models.CharField(max_length=200)
+	phone = models.CharField(max_length=20)
+	idcode = models.CharField(max_length=30)
 
 class MaintenancePerson(models.Model):
 	class Meta:
@@ -23,7 +58,7 @@ class MaintenancePerson(models.Model):
 		return type(tableName , (Class,),attrs)
 
 
-	pid = models.AutoField(primary_key=True , db_column='id')
+	id = models.AutoField(primary_key=True , db_column='id')
 	name = models.CharField(max_length=32)
 	idno = models.CharField(max_length=32)
 	mobile = models.CharField(max_length=32)
@@ -43,12 +78,24 @@ class BankCodeTable(models.Model):
 		db_table = 'bankcodetable'
 	
 
-	bid = models.AutoField(primary_key=True , db_column='id')
+	id = models.AutoField(primary_key=True , db_column='id')
 	bankCode = models.CharField(max_length=10)
 	tableName = models.CharField(max_length=50)
 	mark = models.CharField(max_length=50)
 	name = models.CharField(max_length=50)
 	content = models.CharField(max_length=100)
+
+
+class DRAuth(models.Model):
+	class Meta:
+		db_table = 'DR_BANKCODE_AUTH'
+	
+
+	id = models.AutoField(primary_key=True , db_column='id')
+	bankCode = models.CharField(max_length=10)
+	drIndentity = models.IntegerField()
+	
+
 
 
 
@@ -57,7 +104,7 @@ class Terminal(models.Model):
 		db_table = 'departterminal'
 	
 
-	tid = models.AutoField(primary_key=True , db_column='id')
+	id = models.AutoField(primary_key=True , db_column='id')
 	departId = models.IntegerField()
 	terminalId = models.CharField(max_length=40)
 	content = models.CharField(max_length=100)
@@ -77,10 +124,11 @@ table 's service function
 
 
 
-#update
+#db function
 def queryEngineerNameByIdno(terminalId , idcode):
 	try:
 		log.debug('[DBQUERY]query engineer by idcode = %s'%idcode)
+		log.debug('terminalId=%s'%terminalId)
 		tablename =queryTableNameByTerminalId(terminalId,'MAINTER')
 		tablename = tablename.encode('utf-8')
 		log.debug('tablename=%s'%tablename)
@@ -129,7 +177,63 @@ def queryTableNameByTerminalId(terminalId  , identity):
 			log.debug('[DBQUERY]no record')
 			return ''
 	except Exception , err:
-		log.debug('[2]query fail:%s'%err)
+		log.debug('[3]query fail:%s'%err)
 		return ''	
 
 
+def queryBankCodeByTerminalId(terminalId):
+	try:
+		terminals = Terminal.objects.filter(terminalId=terminalId)
+		if len(terminals) > 0 :
+			return terminals[0].bankCode
+		else:
+			log.debug('[DBQUERY]no record')
+			return ''
+	except Exception , err:
+		log.debug('[3]query fail:%s'%err)
+		return ''
+
+
+def queryIndeByTerminalId(terminalId):
+	try:
+		bankCode = queryBankCodeByTerminalId(terminalId)
+		print bankCode
+		return queryIndeByBankCode(bankCode)
+	except Exception,err:
+		log.debug('[4]query fail:%s'%err)
+		return -2	
+
+def queryIndeByBankCode(bankCode):
+	try:
+		if len(bankCode) > 0:
+			idx = DRAuth.objects.filter(bankCode=bankCode)
+			if len(idx) > 0:
+				return idx[0].drIndentity
+			else:
+				return -3
+		else:
+			return -1
+	except Exception,err:
+		log.debug('[4]query fail:%s'%err)
+		return -2	
+
+def queryPersonFacePath(terminalId , idcode):
+	try:
+		idx = queryIndeByTerminalId(terminalId)
+		if idx<=0 :
+			return ''
+		bankCode = queryBankCodeByTerminalId(terminalId)
+		if len(bankCode)==0 :
+			return ''
+		name = queryEngineerNameByIdno(terminalId , idcode)
+		if len(name)==0 :
+			users = SysUser.objects.filter(idno=idcode)
+			if len(users) > 0:
+				return 'EMP/%s/%s'%(idx,idcode)
+			else:
+				return ''
+		else:
+			return 'ENG/%s/%s'%(idx,idcode)
+	except Exception , err:
+		log.debug('query fail:%s'%err)
+		return ''

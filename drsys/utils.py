@@ -11,7 +11,7 @@ def listFileByTime(dir_path):
 	if not dir_list:
 		return []
 	else:
-		dir_list = sorted(dir_list , key=lambda x: os.path.getmtime(os.path.join(dir_path,x)))
+		dir_list = sorted(dir_list , key=lambda x: os.path.getmtime(os.path.join(dir_path,x)) , reverse=True)
 		return dir_list
 
 
@@ -47,12 +47,10 @@ def fmtMTime(t):
 
 
 if __name__ == '__main__':
-	dir_path = '/home/dr/drai/faceset/422202198006160057'
+	dir_path = '/home/dr/drai/faceset/ENG/999/422202198006160057'
 	l = listFileByTime(dir_path)
-	for f in l :
-		file_t = os.path.getmtime(os.path.join(dir_path,f))
-		print "%s-%s"%(f,fmtMTime(file_t))
+	
 
-	print int2str(3,4)
+	print l
 
 

@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+# -*- coding:utf8 -*-
 import math
 import cv2
 from sklearn import neighbors
@@ -17,7 +17,9 @@ from drconf import dr
 import shutil
 from drsys import syntask
 import trainer
-
+from drsys import cnn
+from drsys import facedb
+from drsys import drdlib
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -27,15 +29,38 @@ log = logging.getLogger(dr.TAG)
 
 train_file = '%s/trained_knn_model.clf'%dr.FACE_BASE
 
+#knn train function
+def _train_():
+	#log.debug("Training KNN classifier...")
+	#classifier = trainer._init_train("faceset", model_save_path="%s/trained_knn_model.clf"%dr.PROJECT_BASE, n_neighbors=2)
+	#log.debug("Training complete!")
+	'''dataset = DataSet('DRJF','ENG')
+    	model = Model()
+    	model.read_trainData(dataset)
+    	model.build_model()
+    	model.train_model()
+    	model.evaluate_model()
+    	model.save()'''
+	#drjf train
+	facedb._train('DRJF','ENG')
 
-def _train():
-	log.debug("Training KNN classifier...")
-	classifier = trainer._init_train("faceset", model_save_path="%s/trained_knn_model.clf"%dr.PROJECT_BASE, n_neighbors=2)
-	log.debug("Training complete!")
 
 def pickFaceFromBytes(data):
 	pilImage = Image.open(BytesIO(data))
 	cvImage = np.array(pilImage)
+	#cvImage = cv2.cvtColor(cvImage , cv2.COLOR_RGB2BGR)
+	face_locations = face_recognition.face_locations(cvImage)
+
+	for face_location in face_locations:
+		top,right,bottom,left =  face_location
+    		face_img = cvImage[top:bottom,left:right]
+		return face_img
+
+	return np.array([])
+
+
+def pickFaceFromFile(f):
+	cvImage = cv2.imread(f)
 	cvImage = cv2.cvtColor(cvImage , cv2.COLOR_RGB2BGR)
 	face_locations = face_recognition.face_locations(cvImage)
 
@@ -47,7 +72,6 @@ def pickFaceFromBytes(data):
 	return np.array([])
 
 
-
 def lastFace(facePath):
 	try:
 
@@ -57,13 +81,15 @@ def lastFace(facePath):
 		return False
 
 
-def checkFace(tmpFile):
-	try:
-		name = lookFromImageFile(tmpFile)
+def checkFace(tmpFile ,terminalId ,personType):
+	#try:
+		#name = cnn.KerasFace('10:d0:7a:01:a8:50','ENG').matchFace(tmpFile)
+		name ,precision = facedb.matchFace(tmpFile , terminalId ,personType)
+		log.debug('checkface result is %s[%s]'%(name,precision))
 		return name
-	except Exception,err:
-		log.debug('fail:%s'%err)
-		return 'fail:%s'%err
+	#except Exception,err:
+		#log.debug('fail:%s'%err)
+		#return 'fail:%s'%err
 
 
 
