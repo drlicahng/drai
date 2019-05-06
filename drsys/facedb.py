@@ -9,7 +9,7 @@ import pandas as pd
 import logging
 log = logging.getLogger('DR') 
 
-def _matchFace(faceImgFile , facedb):
+def _matchFace(faceImgFile , facedb):#BASE FUNCTION OF FACE MACTCH
 	
 	faceRate = 0.6	
 	minIndex = 0
@@ -36,7 +36,7 @@ def _matchFace(faceImgFile , facedb):
 
 
 
-def matchFace(imgPath , terminalId , persontype='ENG'):
+def matchFace(imgPath , terminalId , persontype='ENG'):#BUSS FUNCTION OF FACE MATCH
 	#try:
 		log.debug('face match in')
 		idx = models.queryIndeByTerminalId(terminalId)
@@ -80,7 +80,7 @@ def _train(bankCode , personType='ENG'):#eg: _train('DRJF','ENG')
 	log.debug('model trained!')
 
 
-def read_faces(path):
+def read_faces(path):# read face data from the path (only one level subdir)
     #img_list = []
     #label_list = []
     data=[]
@@ -93,7 +93,7 @@ def read_faces(path):
          for dir_image in  os.listdir(child_path):
              if dir_image.endswith('jpg'):
 		
-		recolored_img = drdlib.findFace(os.path.join(child_path, dir_image))
+		face_img = drdlib.findFace(os.path.join(child_path, dir_image))
                 #img_list.append(np.array(recolored_img))
                 #label_list.append(os.path.split(child_path)[-1])
   		#line.append(os.path.split(child_path)[-1])
@@ -103,7 +103,7 @@ def read_faces(path):
 		label =os.path.split(child_path)[-1] 
 		line.append(label)
 		log.debug('load img[%s] from %s[%s]'%(imgname,child_path,label))
-		face_data = np.array(recolored_img)
+		face_data = np.array(face_img)
 		if len(face_data)==0:
 			continue
 		for d in face_data:
@@ -115,12 +115,12 @@ def read_faces(path):
     return data
 
 
-def save(filePath , data):
+def save(filePath , data):# save the trained data
 	csvOper = pd.DataFrame(columns=None , data=data)
 	csvOper.to_csv(filePath,encoding='utf8')
 	
 
-def load(filePath):
+def load(filePath):# load the trained data from the model file 
 	try:
 		labels = []
 		data = []

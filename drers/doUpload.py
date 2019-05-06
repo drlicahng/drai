@@ -1,6 +1,7 @@
 # -*- coding:utf8 -*-
 from django.http import JsonResponse
 import logging
+import traceback
 from drsys import face,cnn
 import cv2
 import numpy
@@ -18,7 +19,7 @@ log = logging.getLogger('DR')
 
 
 
-def confirmNewFace(request):
+def confirmNewFace(request):#confirm the face is select for new face into db
 	if request.method == 'POST':
 		try:
 			idcode = request.POST.get('idcode')
@@ -40,22 +41,54 @@ def confirmNewFace(request):
 			log.debug('err=%s'%err)
 			msg = {"result":False,"msg":"%s"%err}	
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
-			
-def faceImg(request):
+
+
+def onlyFaceUploadByIdCode(request):
 	if request.method == 'POST':
 		
-		#try:
+		try:
 			img = request.FILES.get('idimg')
 			idcode = request.GET.get('idcode','')
+			
+			tmpFilename = '%s.jpg'%(uuid.uuid1())
+			savePath = '%s/%s'%(dr.FACETMP,tmpFilename)
+
+			#get idcode param
+			req_param_idcode = request.GET.get('idcode')
+			log.debug('request param idcode = %s'%req_param_idcode)						
+				
+			#face pick and store tmp file\
+			imgData = img.read()
+			faceimg = face.pickFaceFromBytes(imgData)
+			cv2.imwrite(savePath , faceimg)
+			
+			log.debug('file upload at %s'%savePath)
+			
+			
+			msg = {"result":True,"msg":"succ","idcode":"%s"%ret,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
+				
+			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
+		except Exception,err:
+			log.debug('err=%s'%traceback.format_exec())
+			msg = {"result":False,"msg":"%s"%err}					
+			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
+		
+	else:
+		log.debug('error request method')
+		return JsonResponse({'result':False},json_dumps_params={'ensure_ascii':False})
+
+
+			
+def faceUploadAndCheck(request):
+	if request.method == 'POST':
+		try:
+			img = request.FILES.get('idimg')
+			
 			terminalId = request.GET.get('terminalId','')
 			personType = request.GET.get('pt','ENG')
 			tmpFilename = '%s.jpg'%(uuid.uuid1())
 			savePath = '%s/%s'%(dr.FACETMP,tmpFilename)
-			
-
-			#get idcode param
-			req_param_idcode = request.GET.get('idcode')
-			log.debug('request param idcode = %s'%req_param_idcode)			
+						
 			#get terminalId param
 			req_param_terminalId = request.GET.get('terminalId')
 			log.debug('request param terminalId = %s'%req_param_terminalId)
@@ -64,36 +97,27 @@ def faceImg(request):
 			imgData = img.read()
 			faceimg = face.pickFaceFromBytes(imgData)
 			cv2.imwrite(savePath , faceimg)
-			'''with open(savePath , 'wb+') as out:
-				for chunk in img.chunks():
-					out.write(chunk)'''
+			
 			log.debug('file upload at %s'%savePath)
-			ret='fail'
-			if len(idcode)>0:
-				#ret = du.learnNewFace(terminalId , idcode , savePath)
-				ret='only'
-			else:
-				ret = face.checkFace(savePath ,terminalId , personType)
-				
-				log.debug('face check RET %s'%ret)
-				if len(ret)==0:
-					ret = 'Nobody'
+
+			ret = face.checkFace(savePath ,terminalId , personType)
+			log.debug('face check RET %s'%ret)
+			if len(ret)==0:
+				ret = 'Nobody'
 			log.debug('ret=%s'%ret)
 			if  ret.find("Nobody")>=0 or ret.find("fail")>=0 :
 				
 				msg = {"result":False,"msg":"%s"%ret}
-			elif ret.find('only')>=0:
-				msg = {"result":True,"msg":"Only","idcode":req_param_idcode,"faceimg":savePath.replace(dr.PROJECT_BASE,'')}
 			else:
 				retName = models.queryEngineerNameByIdno(req_param_terminalId,ret)
 				retName = retName.encode(dr.ENCODING)
 				msg = {"result":True,"msg":"%s"%retName,"idcode":"%s"%ret,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
 				
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
-		#except Exception,err:
-			#log.debug('err=%s'%err)
-			#msg = {"result":False,"msg":"%s"%err}					
-			#return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
+		except Exception,err:
+			log.debug('err=%s'%traceback.format_exec())
+			msg = {"result":False,"msg":"%s"%err}					
+			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		
 	else:
 		log.debug('error request method')
