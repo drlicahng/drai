@@ -8,9 +8,9 @@ import logging
 
 log = logging.getLogger(dr.TAG) 
 
-def learnNewFace(terminalId , idcode , imgpath):
+def learnNewFace(terminalId , idcode , imgpath,personType='ENG'):
 	log.debug('learn in')
-	_the_face_set_dir = os.path.join(dr.FACESET,models.queryPersonFacePath(terminalId,idcode));#os.path.join(dr.FACESET , idcode)
+	_the_face_set_dir = os.path.join(dr.FACESET,models.queryPersonFacePath(terminalId,idcode,personType));#os.path.join(dr.FACESET , idcode)
         log.debug('face set base in %s'%_the_face_set_dir)
 	_list_face_img_path = du.listFileByTime(_the_face_set_dir)
 	log.debug('the person[%s] had %d faces'%(idcode,len(_list_face_img_path)))

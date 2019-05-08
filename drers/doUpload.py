@@ -24,12 +24,13 @@ def confirmNewFace(request):#confirm the face is select for new face into db
 		try:
 			idcode = request.POST.get('idcode')
 			terminalId = request.POST.get('terminalId')
+			personType = request.POST.get('personType')
 			log.debug('post param idcode = %s'%idcode)
 			
 			imgPath = '%s%s'%(dr.PROJECT_BASE , request.POST.get('faceimg').encode(dr.ENCODING))
 			log.debug(' faceimg1 = %s'%imgPath)
 						
-			ret = du.learnNewFace(terminalId , idcode , imgPath)
+			ret = du.learnNewFace(terminalId , idcode , imgPath ,personType)
 			if ret.find("succ")>=0:
 				#syntask.drSyn(face._train_)
 				#log.debug('training')

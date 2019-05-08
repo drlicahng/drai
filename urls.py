@@ -7,6 +7,7 @@ from drers import websys
 urlpatterns = [
 	url('^hello/$',index.hello),
 	url('^index/$',index.index),
+	url('^voice.html$',index.voice),
 	url('^upload.dr/$',http.idImageUpload),
 	url('^getVoice/$',voice.getVoice),
 	url('^faceCheck/$',doUpload.faceUploadAndCheck),

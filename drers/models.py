@@ -217,7 +217,19 @@ def queryIndeByBankCode(bankCode):
 		log.debug('[4]query fail:%s'%err)
 		return -2	
 
-def queryPersonFacePath(terminalId , idcode):
+
+def queryPersonFacePath(terminalId , idcode , personType='ENG'):
+	try:
+		idx = queryIndeByTerminalId(terminalId)
+		if idx<=0 :
+			return ''
+		return '%s/%s/%s'%(personType,idx,idcode)
+	except Exception , err:
+		log.debug('query fail:%s'%err)
+		return ''
+
+
+'''def queryPersonFacePath(terminalId , idcode):
 	try:
 		idx = queryIndeByTerminalId(terminalId)
 		if idx<=0 :
@@ -236,4 +248,4 @@ def queryPersonFacePath(terminalId , idcode):
 			return 'ENG/%s/%s'%(idx,idcode)
 	except Exception , err:
 		log.debug('query fail:%s'%err)
-		return ''
+		return '''''

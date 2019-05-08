@@ -45,11 +45,15 @@ def _train_():
 	facedb._train('DRJF','ENG')
 
 
+def getfaces(img):
+	return face_recognition.face_locations(img)#pick face by face_recognition
+
+
 def pickFaceFromBytes(data):
 	pilImage = Image.open(BytesIO(data))
 	cvImage = np.array(pilImage)
 	#cvImage = cv2.cvtColor(cvImage , cv2.COLOR_RGB2BGR)
-	face_locations = face_recognition.face_locations(cvImage)
+	face_locations = getfaces(cvImage)
 
 	for face_location in face_locations:
 		top,right,bottom,left =  face_location
@@ -62,7 +66,7 @@ def pickFaceFromBytes(data):
 def pickFaceFromFile(f):
 	cvImage = cv2.imread(f)
 	cvImage = cv2.cvtColor(cvImage , cv2.COLOR_RGB2BGR)
-	face_locations = face_recognition.face_locations(cvImage)
+	face_locations = getfaces(cvImage)
 
 	for face_location in face_locations:
 		top,right,bottom,left =  face_location

@@ -22,3 +22,7 @@ def hello(request):
 
 def index(request):
 	return render(request , 'index.html')
+
+
+def voice(request):
+	return render(request , 'voice.html')
