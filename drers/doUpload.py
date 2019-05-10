@@ -70,7 +70,7 @@ def onlyFaceUploadByIdCode(request):
 				
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		except Exception,err:
-			log.debug('err=%s'%traceback.format_exec())
+			log.debug('err=%s'%traceback.format_exc())
 			msg = {"result":False,"msg":"%s"%err}					
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		
@@ -86,7 +86,7 @@ def faceUploadAndCheck(request):
 			img = request.FILES.get('idimg')
 			
 			terminalId = request.GET.get('terminalId','')
-			personType = request.GET.get('pt','ENG')
+			personType = request.GET.get('personType','ENG')
 			tmpFilename = '%s.jpg'%(uuid.uuid1())
 			savePath = '%s/%s'%(dr.FACETMP,tmpFilename)
 						
@@ -116,7 +116,7 @@ def faceUploadAndCheck(request):
 				
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		except Exception,err:
-			log.debug('err=%s'%traceback.format_exec())
+			log.debug('err=%s'%traceback.format_exc())
 			msg = {"result":False,"msg":"%s"%err}					
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		

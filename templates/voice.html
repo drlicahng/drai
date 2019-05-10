@@ -15,13 +15,14 @@
 								success:function(data){
 									
 									var play = document.getElementById('play1');
-									play.src= 'http://192.168.66.108:9092'+ data.url;
+									url = window.location
+									play.src= url.protocol + '//' + url.host+ data.url;
 									$('#disp').text(play.src);
 									play.load();
 									play.play();
 								}
 								});
-							
+						
 						});
 				});
 	</script>
@@ -32,7 +33,7 @@
     </audio>
 	
 	<form id="form" action="/getVoice/" method="POST" >
-  		<input name="content" type="text"/><br/><span id="disp"></span><br/>
+  		<input name="content" type="text" style="width:480"/><br/><span id="disp"></span><br/>
   		<input type="button" id="sub" value="submit"/>
   	
   	
