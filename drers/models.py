@@ -229,6 +229,38 @@ def queryPersonFacePath(terminalId , idcode , personType='ENG'):
 		return ''
 
 
+def checkPersonByIDCode(terminalId , idcode , personType):
+	if personType.find('ENG')>=0:
+		return checkENGByIDCode(terminalId , idcode)
+	else:
+		return checkEMPByIDCode(idcode)
+
+
+def checkEMPByIDCode(idcode):
+	try:
+		users = SysUser.objects.filter(idno=idcode)
+		if len(users) > 0:
+			return True
+		else:
+			return False
+	except Exception , err:
+		log.debug('query fail:%s'%err)
+		return False
+
+
+def checkENGByIDCode(terminalId , idcode):
+	try:
+		name =queryEngineerNameByIdno(terminalId , idcode)
+		if len(name) == 0:
+			return False
+		else:
+			return True
+	except Exception , err:
+		log.debug('query fail:%s'%err)
+		return False
+
+
+
 '''def queryPersonFacePath(terminalId , idcode):
 	try:
 		idx = queryIndeByTerminalId(terminalId)

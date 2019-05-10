@@ -50,24 +50,32 @@ def onlyFaceUploadByIdCode(request):
 		try:
 			img = request.FILES.get('idimg')
 			idcode = request.GET.get('idcode','')
-			
-			tmpFilename = '%s.jpg'%(uuid.uuid1())
-			savePath = '%s/%s'%(dr.FACETMP,tmpFilename)
 
-			#get idcode param
-			req_param_idcode = request.GET.get('idcode')
-			log.debug('request param idcode = %s'%req_param_idcode)						
+			terminalId = request.GET.get('terminalId','')
+			personType = request.GET.get('personType','')
+
+			personExists = models.checkPersonByIDCode(terminalId , idcode , personType)
+			msg={}
+			if personExists :
+			
+				tmpFilename = '%s.jpg'%(uuid.uuid1())
+				savePath = '%s/%s'%(dr.FACETMP,tmpFilename)
+
+				#get idcode param
+				req_param_idcode = request.GET.get('idcode')
+				log.debug('request param idcode = %s'%req_param_idcode)						
 				
-			#face pick and store tmp file\
-			imgData = img.read()
-			faceimg = face.pickFaceFromBytes(imgData)
-			cv2.imwrite(savePath , faceimg)
+				#face pick and store tmp file\
+				imgData = img.read()
+				faceimg = face.pickFaceFromBytes(imgData)
+				cv2.imwrite(savePath , faceimg)
 			
-			log.debug('file upload at %s'%savePath)
+				log.debug('file upload at %s'%savePath)
 			
 			
-			msg = {"result":True,"msg":"succ","idcode":"%s"%ret,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
-				
+				msg = {"result":True,"msg":"succ","idcode":"%s"%idcode,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
+			else:
+				msg = {"result":False,"msg":"noauth"}		
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		except Exception,err:
 			log.debug('err=%s'%traceback.format_exc())
@@ -132,28 +140,34 @@ def idFaceImg(request):
 			img = request.FILES.get('img')
 			idcode = request.GET.get('idcode','')
 			terminalId = request.GET.get('terminalId','')
+			personType = request.GET.get('personType','')
 
-			idx = models.queryPersonFacePath(terminalId,idcode);
-			log.debug("idcode=%s,idx=%s"%(idcode,idx))
-			savePath = os.path.join(dr.FACESET , idx)
-			if not os.path.exists(savePath):
-				os.makedirs(savePath)
-			imgData = img.read()
-			faceimg = face.pickFaceFromBytes(imgData)
+			personExists = models.checkPersonByIDCode(terminalId , idcode , personType)
+			msg = {}
+			if personExists :
+				
 
-			_id_img_filepath = os.path.join(savePath,"0001.jpg")
-			'''with open(_id_img_filepath , 'wb+') as out:
-				for chunk in img.chunks():
-					out.write(chunk)'''
-			if not os.path.exists(_id_img_filepath):
-				cv2.imwrite(_id_img_filepath , faceimg)
-				log.debug('file upload at %s'%savePath)
-				syntask.drSyn(face._train_)
-				log.debug('training')
-			else:
-				log.debug('file exists,nothing is changed')
+				idx = models.queryPersonFacePath(terminalId,idcode);
+				log.debug("idcode=%s,idx=%s"%(idcode,idx))
+				savePath = os.path.join(dr.FACESET , idx)
+				if not os.path.exists(savePath):
+					os.makedirs(savePath)
+				imgData = img.read()
+				faceimg = face.pickFaceFromBytes(imgData)
+
+				_id_img_filepath = os.path.join(savePath,"0001.jpg")
 			
-			msg = {"result":True,"msg":"%s"%_id_img_filepath}	
+				if not os.path.exists(_id_img_filepath):
+					cv2.imwrite(_id_img_filepath , faceimg)
+					log.debug('file upload at %s'%savePath)
+					syntask.drSyn(face._train_)
+					log.debug('training')
+				else:
+					log.debug('file exists,nothing is changed')
+			
+				msg = {"result":True,"msg":"%s"%_id_img_filepath}
+			else:
+				msg = {"result":False,"msg":"noauth"}	
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		except Exception,err:
 			log.debug('err=%s'%err)
