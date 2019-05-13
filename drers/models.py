@@ -238,7 +238,7 @@ def checkPersonByIDCode(terminalId , idcode , personType):
 
 def checkEMPByIDCode(idcode):
 	try:
-		users = SysUser.objects.filter(idno=idcode)
+		users = SysUser.objects.filter(idcode=idcode)
 		if len(users) > 0:
 			return True
 		else:
