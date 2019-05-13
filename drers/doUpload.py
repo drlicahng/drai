@@ -68,14 +68,17 @@ def onlyFaceUploadByIdCode(request):
 				#face pick and store tmp file\
 				imgData = img.read()
 				faceimg = face.pickFaceFromBytes(imgData)
-				cv2.imwrite(savePath , faceimg)
+				if len(faceimg)==0:
+					msg = {"result":False,"msg":"face is not detect"}
+				else:
+					cv2.imwrite(savePath , faceimg)
 			
-				log.debug('file upload at %s'%savePath)
+					log.debug('file upload at %s'%savePath)
 			
 			
-				msg = {"result":True,"msg":"succ","idcode":"%s"%idcode,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
+					msg = {"result":True,"msg":"succ","idcode":"%s"%idcode,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
 			else:
-				msg = {"result":False,"msg":"noauth"}		
+				msg = {"result":False,"msg":"noauth"}	 	
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		except Exception,err:
 			log.debug('err=%s'%traceback.format_exc())
@@ -105,22 +108,25 @@ def faceUploadAndCheck(request):
 			#face pick and store tmp file\
 			imgData = img.read()
 			faceimg = face.pickFaceFromBytes(imgData)
-			cv2.imwrite(savePath , faceimg)
-			
-			log.debug('file upload at %s'%savePath)
-
-			ret = face.checkFace(savePath ,terminalId , personType)
-			log.debug('face check RET %s'%ret)
-			if len(ret)==0:
-				ret = 'Nobody'
-			log.debug('ret=%s'%ret)
-			if  ret.find("Nobody")>=0 or ret.find("fail")>=0 :
-				
-				msg = {"result":False,"msg":"%s"%ret}
+			if len(faceimg)==0:
+				msg = {"result":False,"msg":"face is not detect"}
 			else:
-				retName = models.queryEngineerNameByIdno(req_param_terminalId,ret)
-				retName = retName.encode(dr.ENCODING)
-				msg = {"result":True,"msg":"%s"%retName,"idcode":"%s"%ret,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
+				cv2.imwrite(savePath , faceimg)
+			
+				log.debug('file upload at %s'%savePath)
+
+				ret = face.checkFace(savePath ,terminalId , personType)
+				log.debug('face check RET %s'%ret)
+				if len(ret)==0:
+					ret = 'Nobody'
+				log.debug('ret=%s'%ret)
+				if  ret.find("Nobody")>=0 or ret.find("fail")>=0 :
+				
+					msg = {"result":False,"msg":"%s"%ret}
+				else:
+					retName = models.queryEngineerNameByIdno(req_param_terminalId,ret)
+					retName = retName.encode(dr.ENCODING)
+					msg = {"result":True,"msg":"%s"%retName,"idcode":"%s"%ret,"faceimg":"%s"%savePath.replace(dr.PROJECT_BASE,'')}
 				
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})
 		except Exception,err:
