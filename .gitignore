@@ -4,3 +4,4 @@ drconf/settings.py
 resour/voice/*
 faceimg/*
 nohup
+*/*.pyc
