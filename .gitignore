@@ -1,7 +1,6 @@
 drconf/dr.py
-drconf/dr.pyc
 drconf/settings.py
-drconf/settings.pyc
+*/*.pyc
 resour/voice/*
 faceimg/*
 nohup
