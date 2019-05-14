@@ -10,7 +10,7 @@ class SysOrgan(models.Model):
 	class Meta:
 		db_table = 'departments'
 	id = models.AutoField(primary_key=True , db_column='id')
-	parentId = models.OneToOneField('SysOrgan' )
+	parentId = models.OneToOneField('SysOrgan',db_column='parentId' )
 	name = models.CharField(max_length=60)
 	sort = models.IntegerField()
 	address = models.CharField(max_length=100)
@@ -28,7 +28,7 @@ class SysUser(models.Model):
 	
 
 	id = models.AutoField(primary_key=True , db_column='id')
-	departmentId = models.OneToOneField('SysOrgan')
+	departmentId = models.OneToOneField('SysOrgan',db_column="departmentId")
 	name = models.CharField(max_length=50)
 	sex = models.CharField(max_length=10)
 	login = models.CharField(max_length=50)

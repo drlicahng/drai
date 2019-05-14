@@ -4,6 +4,7 @@ from drconf import single,dr
 import sys
 import logging
 from drsys import cnn,drdlib,facedb,face
+from drers import models
 import pandas as pd
 import numpy as np
 
@@ -35,6 +36,9 @@ if __name__ == "__main__":
 		if param[0].find('face')>=0:
 			name = cnn.KerasFace('10:d0:7a:01:a8:50','ENG').matchFace('/home/dr/my.jpg')
     			print name
+		elif param[0].find('models')>=0:
+			has = models.checkEMPByIDCode('422202198006160057')
+			print has
 
 	elif cmdFunc.find('dlib')>=0:#dlib function test cmd
 		param.append(sys.argv[2])
