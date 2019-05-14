@@ -4,7 +4,7 @@ from drconf import single,dr
 import sys
 import logging
 from drsys import cnn,drdlib,facedb,face
-from drers import models
+from drers import models , utils as du
 import pandas as pd
 import numpy as np
 
@@ -39,7 +39,9 @@ if __name__ == "__main__":
 		elif param[0].find('models')>=0:
 			has = models.checkEMPByIDCode('422202198006160057')
 			print has
-
+		elif param[0].find('learnNew')>=0:
+			ret = du.learnNewFace('10:d0:7a:1d:97:3c','422202198006160057','/faceimg/04c59ed4-761b-11e9-8c98-6c92bf4f8706.jpg','EMP')
+			print ret
 	elif cmdFunc.find('dlib')>=0:#dlib function test cmd
 		param.append(sys.argv[2])
 		print param[0]

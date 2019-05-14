@@ -54,10 +54,11 @@ def onlyFaceUploadByIdCode(request):
 			terminalId = request.GET.get('terminalId','')
 			personType = request.GET.get('personType','')
 
+			
 			personExists = models.checkPersonByIDCode(terminalId , idcode , personType)
 			msg={}
 			if personExists :
-			
+				#idx = models.queryPersonFacePath(terminalId ,idcode,personType)
 				tmpFilename = '%s.jpg'%(uuid.uuid1())
 				savePath = '%s/%s'%(dr.FACETMP,tmpFilename)
 
@@ -153,7 +154,7 @@ def idFaceImg(request):
 			if personExists :
 				
 
-				idx = models.queryPersonFacePath(terminalId,idcode);
+				idx = models.queryPersonFacePath(terminalId,idcode,personType);
 				log.debug("idcode=%s,idx=%s"%(idcode,idx))
 				savePath = os.path.join(dr.FACESET , idx)
 				if not os.path.exists(savePath):

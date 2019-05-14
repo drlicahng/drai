@@ -12,6 +12,8 @@ def learnNewFace(terminalId , idcode , imgpath,personType='ENG'):
 	log.debug('learn in')
 	_the_face_set_dir = os.path.join(dr.FACESET,models.queryPersonFacePath(terminalId,idcode,personType));#os.path.join(dr.FACESET , idcode)
         log.debug('face set base in %s'%_the_face_set_dir)
+	if not os.path.exists(_the_face_set_dir):
+		os.makedirs(_the_face_set_dir)
 	_list_face_img_path = du.listFileByTime(_the_face_set_dir)
 	log.debug('the person[%s] had %d faces'%(idcode,len(_list_face_img_path)))
 	_new_img_file_index = 1
@@ -27,7 +29,7 @@ def learnNewFace(terminalId , idcode , imgpath,personType='ENG'):
 		_new_img_filename = "%s.jpg"%du.int2str(_new_img_index, length=4)
 		log.debug('the new face img name is %s' % _new_img_filename)
 		log.debug('learn idcode = %s'%idcode)
-		_person_face_set_path = models.queryPersonFacePath(terminalId , idcode)
+		_person_face_set_path = models.queryPersonFacePath(terminalId , idcode,personType)
 		log.debug( 'face set path = %s'%_person_face_set_path)
 		_person_face_set_path = os.path.join(dr.FACESET,_person_face_set_path)
 		if not os.path.exists(_person_face_set_path):
