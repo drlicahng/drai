@@ -44,6 +44,9 @@ def _train_():
 	#drjf train
 	facedb._train('DRJF','ENG')
 
+def _train_special(bankcode , personType):
+	facedb._train(bankcode , personType)
+
 
 def getfaces(img):
 	return face_recognition.face_locations(img)#pick face by face_recognition

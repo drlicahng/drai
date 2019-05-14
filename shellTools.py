@@ -3,7 +3,7 @@
 from drconf import single,dr
 import sys
 import logging
-from drsys import cnn,drdlib,facedb
+from drsys import cnn,drdlib,facedb,face
 import pandas as pd
 import numpy as np
 
@@ -21,13 +21,14 @@ if __name__ == "__main__":
 		param.append(sys.argv[3])#person type
 		log.debug('a train[%s] will console'%param[0])
 		
-		dataset = cnn.DataSet(param[0],param[1])
+		'''dataset = cnn.DataSet(param[0],param[1])
     		model = cnn.Model()
     		model.read_trainData(dataset)
     		model.build_model()
     		model.train_model()
     		model.evaluate_model()
-    		model.save()
+    		model.save()'''
+		face._train_special(param[0] , param[1])
 
 	elif cmdFunc.find('test')>=0:#normal test main exec
 		param.append(sys.argv[2])
