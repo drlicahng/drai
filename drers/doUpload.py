@@ -13,6 +13,7 @@ from io import BytesIO
 from drers import models
 from drers import utils as du
 from drsys import syntask
+from drsys import utils as dsu
 
 
 log = logging.getLogger('DR') 
@@ -162,17 +163,24 @@ def idFaceImg(request):
 				imgData = img.read()
 				faceimg = face.pickFaceFromBytes(imgData)
 
-				_id_img_filepath = os.path.join(savePath,"0001.jpg")
-			
-				if not os.path.exists(_id_img_filepath):
-					cv2.imwrite(_id_img_filepath , faceimg)
-					log.debug('file upload at %s'%savePath)
-					syntask.drSyn(face._train_)
-					log.debug('training')
+				#auth check
+				#if have any one image exsits,noauth
+				_auth_path_img_list = dsu.listFileByTime(savePath)				
+				
+				if len(_auth_path_img_list)>1 :
+					msg = {"result":False,"msg":"noauth"}
 				else:
-					log.debug('file exists,nothing is changed')
+					_id_img_filepath = os.path.join(savePath,"0001.jpg")
 			
-				msg = {"result":True,"msg":"%s"%_id_img_filepath}
+					if not os.path.exists(_id_img_filepath):
+						cv2.imwrite(_id_img_filepath , faceimg)
+						log.debug('file upload at %s'%savePath)
+						syntask.drSyn(face._train_)
+						log.debug('training')
+					else:
+						log.debug('file exists,nothing is changed')
+			
+					msg = {"result":True,"msg":"%s"%_id_img_filepath}
 			else:
 				msg = {"result":False,"msg":"noauth"}	
 			return JsonResponse(msg,json_dumps_params={'ensure_ascii':False})

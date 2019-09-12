@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 # -*- coding:utf-8 -*-
 import os
 import datetime
@@ -47,7 +48,7 @@ def fmtMTime(t):
 
 
 if __name__ == '__main__':
-	dir_path = '/home/dr/drai/faceset/ENG/999/422202198006160057'
+	dir_path = '/home/dr/drai/faceset/ENG/200/422202198006160057'
 	l = listFileByTime(dir_path)
 	
 
