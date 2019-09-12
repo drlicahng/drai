@@ -81,13 +81,18 @@ if __name__ == "__main__":
 			if pre < 1 :
 				print 'is %s[%s]'%(label,pre)
 			else:
-				print 'nobody matched'
+				print 'nobody matched[pre=%s]'%pre
 			
 		elif param[0].find('train')>=0:#eg train DRJF ENG
 			param.append(sys.argv[3])#bankcode
 			param.append(sys.argv[4])#personType
 		
 			facedb._train(param[1] , param[2])
-				
-		
+		elif param[0].find('match')>=0:
+			param.append(sys.argv[3])#matchImagePath
+			param.append(sys.argv[4])#terminalId
+			param.append(sys.argv[5])#idcode
+			param.append(sys.argv[6])#personType		
+			pre = face._checkFace(param[1] , param[2] , param[3],param[4])
+			print pre
 			

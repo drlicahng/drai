@@ -20,6 +20,7 @@ import trainer
 from drsys import cnn
 from drsys import facedb
 from drsys import drdlib
+from drers import models
 
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -98,6 +99,16 @@ def checkFace(tmpFile ,terminalId ,personType):
 		#log.debug('fail:%s'%err)
 		#return 'fail:%s'%err
 
+def _checkFace(tmpFile , terminalId , idcode , personType):
+	log.debug('image file match the id image')
+	idx = models.queryIndeByTerminalId(terminalId)
+	FILE_PATH = ''
+	if personType == 'ENG':
+		FILE_PATH = '%s/ENG/%s/%s/0001.jpg'%(dr.FACESET , idx , idcode)
+	else:
+		FILE_PATH = '%s/EMP/%s/%s/0001.jpg'%(dr.FACESET , idx , idcode)
+	log.debug('id image location:%s'%FILE_PATH)
+	return facedb._only_matchFace_(tmpFile , FILE_PATH)
 
 
 def predict(X_img_path, knn_clf=None, model_path=None, distance_threshold=0.6):

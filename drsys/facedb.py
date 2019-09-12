@@ -9,6 +9,16 @@ import pandas as pd
 import logging
 log = logging.getLogger('DR') 
 
+def _only_matchFace_(faceImage1 , faceImage2):
+	face1 = drdlib.findFace(faceImage1)
+	face2 = drdlib.findFace(faceImage2)
+	if len(face1)==0:
+		return 2
+	if len(face2)==0:
+		return 3
+	matchPer = drdlib._count_dist(face1 , face2)
+	return matchPer
+
 def _matchFace(faceImgFile , facedb):#BASE FUNCTION OF FACE MACTCH
 	
 	faceRate = 0.6	
@@ -78,6 +88,7 @@ def _train(bankCode , personType='ENG'):#eg: _train('DRJF','ENG')
 	save(FILE_PATH , data)
 
 	log.debug('model trained!')
+
 
 
 def read_faces(path):# read face data from the path (only one level subdir)
