@@ -167,8 +167,8 @@ def idFaceImg(request):
 				#if have any one image exsits,noauth
 				_auth_path_img_list = dsu.listFileByTime(savePath)				
 				
-				if len(_auth_path_img_list)>1 :
-					msg = {"result":False,"msg":"noauth"}
+				if len(_auth_path_img_list)>1 and personType=='ENG' :
+					msg = {"result":False,"msg":"reauth"}
 				else:
 					_id_img_filepath = os.path.join(savePath,"0001.jpg")
 			
