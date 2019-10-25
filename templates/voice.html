@@ -1,4 +1,5 @@
 <html>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <head>
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<script src="/resour/js/jquery-3.4.1.min.js"></script>
@@ -17,7 +18,8 @@
 									var play = document.getElementById('play1');
 									url = window.location
 									play.src= url.protocol + '//' + url.host+ data.url;
-									$('#disp').text(play.src);
+									var urlhref = '可点击我下载<a href="'+play.src + '">'+play.src+'</a>'
+									$('#disp').html(urlhref);
 									play.load();
 									play.play();
 								}
@@ -34,7 +36,7 @@
 	
 	<form id="form" action="/getVoice/" method="POST" >
   		<input name="content" type="text" style="width:480"/><br/><span id="disp"></span><br/>
-  		<input type="button" id="sub" value="submit"/>
+  		<input type="button" id="sub" value="开始转换"/>
   	
   	
   </form>

@@ -23,13 +23,14 @@ def getVoice(request):
 	 	
 	 	voice.voiceParam["tex"] =content
 		voice.voiceParam["tok"] = token
+		voice.voiceParam["aue"] = 3
 		#param = quote(param)
 	 	#logger.debug("encod token is %s" % (param["tex"]))
 	 	wavData = utils.http(voice.makeUrl ,voice.voiceParam)
 	 	#resp = HttpResponse(wavData)
 	 	#resp['Content-Type'] = 'audio/wav'
 	 	#resp['Content-Disposition'] = 'attachment;filename="tmp.wav"'
-		tmpFilename = '%s.wav'%(uuid.uuid1())
+		tmpFilename = '%s.mp3'%(uuid.uuid1())
 		tmpfile = '%s/%s'%(dr.VOICETMP,tmpFilename)
 
 		if len(wavData) > dr.WAV_MIN_LENGTH :

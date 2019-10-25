@@ -1,4 +1,3 @@
-drconf/dr.py
 drconf/settings.py
 */*.pyc
 resour/voice/*
