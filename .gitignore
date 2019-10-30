@@ -1,4 +1,3 @@
-drconf/settings.py
 */*.pyc
 resour/voice/*
 faceimg/*
