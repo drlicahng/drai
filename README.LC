@@ -1,0 +1,25 @@
+人脸识别后台-新建
+1、复制/home/dr/python/drai 到新项目所在地，可重命名
+如新目录/home/dr/drai-icbc（以下代称$newProjectDir）
+2、修改$newProjectDir/drconf/dr.py :
+line 9:调整为$newProjectDir 对应的目录
+3、修改$newProjectDir/drconf/settings.py:
+line 71 ,72,73,74,75为新项目对应的后台管理系统数据库参数
+line 139,147,160,168 调整为新项目对应人脸识别日志输出文件
+4、命令行进入$newProjectDir目录
+!!!!在指定端口上运行人脸识别服务（如9003 ，以下用$PORT代称人脸服务端口!!!）
+运行：nohup python runserver.py runserver 0.0.0.0:$PORT &
+
+
+DRERS-FACE apk项目调整
+修改DR.java line 234:调整9092为对应$PORT
+line 16:调整DRERSNJ 为对应apk伺服的后台应用
+编译，部署
+
+drersweb后台管理系统调整：
+use 后台数据库
+dr_bankcode_auth添加新行人脸授权
+insert into   （bankcode ，新行人脸存储标示-必须为整数-可自由设定）
+东润金服已设999
+南京银行已设200
+

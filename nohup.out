@@ -1,1 +1,159 @@
 
+2019-10-30 09:18:25,625 [Thread-832:140470940174080] [DR:108] [doUpload:faceUploadAndCheck] [DEBUG]- request param terminalId = 10:d0:7a:1d:96:f2
+2019-10-30 09:18:26,411 [Thread-832:140470940174080] [DR:118] [doUpload:faceUploadAndCheck] [DEBUG]- file upload at /home/drers01/python/drai/faceimg/2c06edfa-fab3-11e9-ab8d-6c92bf4f8706.jpg
+2019-10-30 09:18:26,411 [Thread-832:140470940174080] [DR:51] [facedb:matchFace] [DEBUG]- face match in
+2019-10-30 09:18:26,423 [Thread-832:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-10-30 09:18:26,424 [Thread-832:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-10-30 09:18:26,436 [Thread-832:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `departterminal`.`id`, `departterminal`.`departId`, `departterminal`.`terminalId`, `departterminal`.`content`, `departterminal`.`mac`, `departterminal`.`bankCode`, `departterminal`.`bigVer`, `departterminal`.`shortVer`, `departterminal`.`departTreeId`, `departterminal`.`lastAccessTime` FROM `departterminal` WHERE `departterminal`.`terminalId` = '10:d0:7a:1d:96:f2'; args=(u'10:d0:7a:1d:96:f2',)
+2019-10-30 09:18:26,447 [Thread-832:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.010) SELECT `DR_BANKCODE_AUTH`.`id`, `DR_BANKCODE_AUTH`.`bankCode`, `DR_BANKCODE_AUTH`.`drIndentity` FROM `DR_BANKCODE_AUTH` WHERE `DR_BANKCODE_AUTH`.`bankCode` = 'NJCB'; args=(u'NJCB',)
+2019-10-30 09:18:26,447 [Thread-832:140470940174080] [DR:53] [facedb:matchFace] [DEBUG]- /home/drers01/python/drai/faceimg/2c06edfa-fab3-11e9-ab8d-6c92bf4f8706.jpg,10:d0:7a:1d:96:f2,EMP
+2019-10-30 09:18:26,447 [Thread-832:140470940174080] [DR:60] [facedb:matchFace] [DEBUG]- model path [/home/drers01/python/drai/faceset/models/200/EMP.dr]
+2019-10-30 09:18:27,407 [Thread-832:140470940174080] [DR:28] [facedb:_matchFace] [DEBUG]- check face from /home/drers01/python/drai/faceset/models/200/EMP.dr ,found 128
+2019-10-30 09:18:27,465 [Thread-832:140470940174080] [DR:32] [facedb:_matchFace] [DEBUG]- load model data from /home/drers01/python/drai/faceset/models/200/EMP.dr
+2019-10-30 09:18:27,465 [Thread-832:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.642806197754661,result=False
+2019-10-30 09:18:27,466 [Thread-832:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.32841812226565104,result=True
+2019-10-30 09:18:27,466 [Thread-832:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.39077220758676773,result=True
+2019-10-30 09:18:27,466 [Thread-832:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.3495718498534707,result=True
+2019-10-30 09:18:27,467 [Thread-832:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.45774076501892996,result=True
+2019-10-30 09:18:27,467 [Thread-832:140470940174080] [DR:62] [facedb:matchFace] [DEBUG]- ('320123198602171212', 0.32841812226565104)
+2019-10-30 09:18:27,467 [Thread-832:140470940174080] [DR:96] [face:checkFace] [DEBUG]- checkface result is 320123198602171212[0.32841812226565104]
+2019-10-30 09:18:27,467 [Thread-832:140470940174080] [DR:121] [doUpload:faceUploadAndCheck] [DEBUG]- face check RET 320123198602171212
+2019-10-30 09:18:27,467 [Thread-832:140470940174080] [DR:124] [doUpload:faceUploadAndCheck] [DEBUG]- ret=320123198602171212
+2019-10-30 09:18:27,467 [Thread-832:140470940174080] [DR:130] [models:queryEngineerNameByIdno] [DEBUG]- [DBQUERY]query engineer by idcode = 320123198602171212
+2019-10-30 09:18:27,467 [Thread-832:140470940174080] [DR:131] [models:queryEngineerNameByIdno] [DEBUG]- terminalId=10:d0:7a:1d:96:f2
+2019-10-30 09:18:27,469 [Thread-832:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.001) SELECT `departterminal`.`id`, `departterminal`.`departId`, `departterminal`.`terminalId`, `departterminal`.`content`, `departterminal`.`mac`, `departterminal`.`bankCode`, `departterminal`.`bigVer`, `departterminal`.`shortVer`, `departterminal`.`departTreeId`, `departterminal`.`lastAccessTime` FROM `departterminal` WHERE `departterminal`.`terminalId` = '10:d0:7a:1d:96:f2'; args=(u'10:d0:7a:1d:96:f2',)
+2019-10-30 09:18:27,471 [Thread-832:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'NJCB' AND `bankcodetable`.`mark` = 'MAINTER'); args=(u'NJCB', 'MAINTER')
+2019-10-30 09:18:27,471 [Thread-832:140470940174080] [DR:134] [models:queryEngineerNameByIdno] [DEBUG]- tablename=MaintenancePerson
+2019-10-30 09:18:27,472 [Thread-832:140470940174080] [DR:136] [models:queryEngineerNameByIdno] [DEBUG]- <class 'drers.models.MaintenancePerson'>
+2019-10-30 09:18:27,475 [Thread-832:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.001) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '320123198602171212'; args=('320123198602171212',)
+2019-10-30 09:18:27,475 [Thread-832:140470940174080] [DR:138] [models:queryEngineerNameByIdno] [DEBUG]- [1]query size = 1
+2019-10-30 09:18:27,475 [Thread-832:140470940174080] [DR:140] [models:queryEngineerNameByIdno] [DEBUG]- [DBQUERY]name=王志林
+2019-10-30 09:18:27,476 [Thread-832:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceCheck/?idcode=null&terminalId=10:d0:7a:1d:96:f2&personType=EMP HTTP/1.1" 200 132
+2019-10-30 09:18:27,660 [Thread-833:140470940174080] [DR:13] [voice:getVoice] [DEBUG]- request in 
+2019-10-30 09:18:27,660 [Thread-833:140470940174080] [DR:14] [voice:getVoice] [DEBUG]- POST
+2019-10-30 09:18:27,660 [Thread-833:140470940174080] [DR:17] [voice:getVoice] [DEBUG]- 智能运维平台识别您是王志林
+2019-10-30 09:18:27,681 [Thread-833:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-10-30 09:18:27,682 [Thread-833:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-10-30 09:18:27,706 [Thread-833:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-10-30 09:18:27,706 [Thread-833:140470940174080] [DR:20] [voice:getVoice] [DEBUG]- token is 25.5074604d656e076c5535cf4de2d8598c.315360000.1886118348.282335-11123308
+2019-10-30 09:18:27,706 [Thread-833:140470940174080] [DR:22] [voice:getVoice] [DEBUG]- url=http://tsn.baidu.com/text2audio
+2019-10-30 09:18:28,255 [Thread-833:140470940174080] [DR:40] [voice:getVoice] [DEBUG]- {'url': '/resour/voice/2d984e2a-fab3-11e9-8989-6c92bf4f8706.mp3', 'ret': 'succ'}
+2019-10-30 09:18:28,256 [Thread-833:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "POST /getVoice/ HTTP/1.1" 200 80
+2019-10-30 09:18:28,678 [Thread-834:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "GET /resour/voice/2d984e2a-fab3-11e9-8989-6c92bf4f8706.mp3 HTTP/1.1" 200 8496
+2019-10-30 09:18:28,938 [Thread-835:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "GET /resour/voice/2d984e2a-fab3-11e9-8989-6c92bf4f8706.mp3 HTTP/1.1" 200 8496
+2019-10-30 09:18:53,773 [Thread-836:140470940174080] [DR:29] [doUpload:confirmNewFace] [DEBUG]- post param idcode = 320123198602171212
+2019-10-30 09:18:53,773 [Thread-836:140470940174080] [DR:32] [doUpload:confirmNewFace] [DEBUG]-  faceimg1 = /home/drers01/python/drai/faceimg/2c06edfa-fab3-11e9-ab8d-6c92bf4f8706.jpg
+2019-10-30 09:18:53,773 [Thread-836:140470940174080] [DR:12] [utils:learnNewFace] [DEBUG]- learn in
+2019-10-30 09:18:53,796 [Thread-836:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-10-30 09:18:53,797 [Thread-836:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-10-30 09:18:53,809 [Thread-836:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `departterminal`.`id`, `departterminal`.`departId`, `departterminal`.`terminalId`, `departterminal`.`content`, `departterminal`.`mac`, `departterminal`.`bankCode`, `departterminal`.`bigVer`, `departterminal`.`shortVer`, `departterminal`.`departTreeId`, `departterminal`.`lastAccessTime` FROM `departterminal` WHERE `departterminal`.`terminalId` = '10:d0:7a:1d:96:f2'; args=(u'10:d0:7a:1d:96:f2',)
+2019-10-30 09:18:53,810 [Thread-836:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `DR_BANKCODE_AUTH`.`id`, `DR_BANKCODE_AUTH`.`bankCode`, `DR_BANKCODE_AUTH`.`drIndentity` FROM `DR_BANKCODE_AUTH` WHERE `DR_BANKCODE_AUTH`.`bankCode` = 'NJCB'; args=(u'NJCB',)
+2019-10-30 09:18:53,811 [Thread-836:140470940174080] [DR:14] [utils:learnNewFace] [DEBUG]- face set base in /home/drers01/python/drai/faceset/EMP/200/320123198602171212
+2019-10-30 09:18:53,811 [Thread-836:140470940174080] [DR:18] [utils:learnNewFace] [DEBUG]- the person[320123198602171212] had 5 faces
+2019-10-30 09:18:53,811 [Thread-836:140470940174080] [DR:20] [utils:learnNewFace] [DEBUG]- file total has [u'0004.jpg', u'0003.jpg', u'0002.jpg', u'0005.jpg', u'0001.jpg']
+2019-10-30 09:18:53,811 [Thread-836:140470940174080] [DR:24] [utils:learnNewFace] [DEBUG]- faceset last face is 0004
+2019-10-30 09:18:53,811 [Thread-836:140470940174080] [DR:30] [utils:learnNewFace] [DEBUG]- the new face img name is 0005.jpg
+2019-10-30 09:18:53,811 [Thread-836:140470940174080] [DR:31] [utils:learnNewFace] [DEBUG]- learn idcode = 320123198602171212
+2019-10-30 09:18:53,813 [Thread-836:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `departterminal`.`id`, `departterminal`.`departId`, `departterminal`.`terminalId`, `departterminal`.`content`, `departterminal`.`mac`, `departterminal`.`bankCode`, `departterminal`.`bigVer`, `departterminal`.`shortVer`, `departterminal`.`departTreeId`, `departterminal`.`lastAccessTime` FROM `departterminal` WHERE `departterminal`.`terminalId` = '10:d0:7a:1d:96:f2'; args=(u'10:d0:7a:1d:96:f2',)
+2019-10-30 09:18:53,814 [Thread-836:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `DR_BANKCODE_AUTH`.`id`, `DR_BANKCODE_AUTH`.`bankCode`, `DR_BANKCODE_AUTH`.`drIndentity` FROM `DR_BANKCODE_AUTH` WHERE `DR_BANKCODE_AUTH`.`bankCode` = 'NJCB'; args=(u'NJCB',)
+2019-10-30 09:18:53,814 [Thread-836:140470940174080] [DR:33] [utils:learnNewFace] [DEBUG]- face set path = EMP/200/320123198602171212
+2019-10-30 09:18:53,835 [Thread-836:140470940174080] [DR:40] [utils:learnNewFace] [DEBUG]- the new face is create in faceset[/home/drers01/python/drai/faceset/EMP/200/320123198602171212/0005.jpg]
+2019-10-30 09:18:53,836 [Thread-836:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "POST /confirmNewFace/ HTTP/1.1" 200 37
+2019-10-30 09:23:24,052 [Thread-837:140470940174080] [DR:108] [doUpload:faceUploadAndCheck] [DEBUG]- request param terminalId = 10:d0:7a:1d:96:f2
+2019-10-30 09:23:24,865 [Thread-837:140470940174080] [DR:118] [doUpload:faceUploadAndCheck] [DEBUG]- file upload at /home/drers01/python/drai/faceimg/dde74902-fab3-11e9-ad74-6c92bf4f8706.jpg
+2019-10-30 09:23:24,865 [Thread-837:140470940174080] [DR:51] [facedb:matchFace] [DEBUG]- face match in
+2019-10-30 09:23:24,877 [Thread-837:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-10-30 09:23:24,878 [Thread-837:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-10-30 09:23:24,891 [Thread-837:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `departterminal`.`id`, `departterminal`.`departId`, `departterminal`.`terminalId`, `departterminal`.`content`, `departterminal`.`mac`, `departterminal`.`bankCode`, `departterminal`.`bigVer`, `departterminal`.`shortVer`, `departterminal`.`departTreeId`, `departterminal`.`lastAccessTime` FROM `departterminal` WHERE `departterminal`.`terminalId` = '10:d0:7a:1d:96:f2'; args=(u'10:d0:7a:1d:96:f2',)
+2019-10-30 09:23:24,892 [Thread-837:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `DR_BANKCODE_AUTH`.`id`, `DR_BANKCODE_AUTH`.`bankCode`, `DR_BANKCODE_AUTH`.`drIndentity` FROM `DR_BANKCODE_AUTH` WHERE `DR_BANKCODE_AUTH`.`bankCode` = 'NJCB'; args=(u'NJCB',)
+2019-10-30 09:23:24,893 [Thread-837:140470940174080] [DR:53] [facedb:matchFace] [DEBUG]- /home/drers01/python/drai/faceimg/dde74902-fab3-11e9-ad74-6c92bf4f8706.jpg,10:d0:7a:1d:96:f2,ENG
+2019-10-30 09:23:24,893 [Thread-837:140470940174080] [DR:60] [facedb:matchFace] [DEBUG]- model path [/home/drers01/python/drai/faceset/models/200/ENG.dr]
+2019-10-30 09:23:25,925 [Thread-837:140470940174080] [DR:28] [facedb:_matchFace] [DEBUG]- check face from /home/drers01/python/drai/faceset/models/200/ENG.dr ,found 128
+2019-10-30 09:23:25,975 [Thread-837:140470940174080] [DR:32] [facedb:_matchFace] [DEBUG]- load model data from /home/drers01/python/drai/faceset/models/200/ENG.dr
+2019-10-30 09:23:25,976 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320831197812183215,pre=0.6265841402925573,result=False
+2019-10-30 09:23:25,976 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123197803071010,pre=0.584929067450167,result=True
+2019-10-30 09:23:25,977 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123197803071010,pre=0.5536660866101866,result=True
+2019-10-30 09:23:25,977 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123197803071010,pre=0.5307607268902256,result=True
+2019-10-30 09:23:25,977 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123197803071010,pre=0.4720326992830555,result=True
+2019-10-30 09:23:25,978 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123197803071010,pre=0.5168661622843582,result=True
+2019-10-30 09:23:25,978 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.4303962484246659,result=True
+2019-10-30 09:23:25,978 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.3924908979356776,result=True
+2019-10-30 09:23:25,979 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.43962791158815884,result=True
+2019-10-30 09:23:25,979 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.3998656898213368,result=True
+2019-10-30 09:23:25,979 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320123198602171212,pre=0.42466393235481464,result=True
+2019-10-30 09:23:25,980 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=310222196709070057,pre=0.6579845982570489,result=False
+2019-10-30 09:23:25,980 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=310222196709070057,pre=0.5219500986047222,result=True
+2019-10-30 09:23:25,981 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=310222196709070057,pre=0.4930338648368896,result=True
+2019-10-30 09:23:25,981 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320103196605071271,pre=0.534590890100922,result=True
+2019-10-30 09:23:25,981 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320103196605071271,pre=0.5248401547339925,result=True
+2019-10-30 09:23:25,982 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102195809082422,pre=0.6449881896163824,result=False
+2019-10-30 09:23:25,982 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102195809082422,pre=0.6361156241988,result=False
+2019-10-30 09:23:25,982 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102195809082422,pre=0.5476589190680418,result=True
+2019-10-30 09:23:25,983 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102195809082422,pre=0.6147064522999226,result=False
+2019-10-30 09:23:25,983 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102195809082422,pre=0.6633141273465302,result=False
+2019-10-30 09:23:25,983 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=32082619840628222X,pre=0.683115652941472,result=False
+2019-10-30 09:23:25,984 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=32082619840628222X,pre=0.6219425906375033,result=False
+2019-10-30 09:23:25,984 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=32082619840628222X,pre=0.6747845277314223,result=False
+2019-10-30 09:23:25,984 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=32082619840628222X,pre=0.6210599842471463,result=False
+2019-10-30 09:23:25,985 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102197008122817,pre=0.6312197980979085,result=False
+2019-10-30 09:23:25,985 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102197008122817,pre=0.5332760630484611,result=True
+2019-10-30 09:23:25,986 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102197008122817,pre=0.6213326046694542,result=False
+2019-10-30 09:23:25,998 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102197008122817,pre=0.5896584611582173,result=True
+2019-10-30 09:23:25,998 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320102197008122817,pre=0.6204397120620633,result=False
+2019-10-30 09:23:25,999 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320106197201221222,pre=0.7047274130285188,result=False
+2019-10-30 09:23:25,999 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320105197506130616,pre=0.7323056680293407,result=False
+2019-10-30 09:23:25,999 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320105197506130616,pre=0.6440828866304016,result=False
+2019-10-30 09:23:26,000 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320105197506130616,pre=0.6576125172932373,result=False
+2019-10-30 09:23:26,000 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320105197506130616,pre=0.6790500251777933,result=False
+2019-10-30 09:23:26,000 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320105197506130616,pre=0.7081813198197708,result=False
+2019-10-30 09:23:26,001 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320121197706134347,pre=0.5509290962419822,result=True
+2019-10-30 09:23:26,001 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320121197706134347,pre=0.5558959428149285,result=True
+2019-10-30 09:23:26,002 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320121197706134347,pre=0.5625082005896774,result=True
+2019-10-30 09:23:26,002 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320121197706134347,pre=0.5895355131978152,result=True
+2019-10-30 09:23:26,002 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320113196704282018,pre=0.5449555159851805,result=True
+2019-10-30 09:23:26,003 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320113196704282018,pre=0.5136697820380284,result=True
+2019-10-30 09:23:26,003 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320113196704282018,pre=0.513813069689928,result=True
+2019-10-30 09:23:26,003 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320113196704282018,pre=0.49566770608891664,result=True
+2019-10-30 09:23:26,004 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320113196704282018,pre=0.5365713575775182,result=True
+2019-10-30 09:23:26,004 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320106196704091613,pre=0.5627998908961939,result=True
+2019-10-30 09:23:26,004 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320106196704091613,pre=0.5437537571402449,result=True
+2019-10-30 09:23:26,005 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320106196704091613,pre=0.5790543972056823,result=True
+2019-10-30 09:23:26,005 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320106196704091613,pre=0.4968977855384868,result=True
+2019-10-30 09:23:26,005 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320106196704091613,pre=0.5098816683925471,result=True
+2019-10-30 09:23:26,006 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=422202198006160057,pre=0.7014064248465317,result=False
+2019-10-30 09:23:26,006 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=422202198006160057,pre=0.7157978084337748,result=False
+2019-10-30 09:23:26,007 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=422202198006160057,pre=0.7022983042993918,result=False
+2019-10-30 09:23:26,007 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=422202198006160057,pre=0.6214012854034354,result=False
+2019-10-30 09:23:26,007 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=422202198006160057,pre=0.6892728772942939,result=False
+2019-10-30 09:23:26,008 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320621194511300011,pre=0.6286528565385824,result=False
+2019-10-30 09:23:26,008 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320621194511300011,pre=0.690679523524948,result=False
+2019-10-30 09:23:26,008 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320621194511300011,pre=0.6071479932846336,result=False
+2019-10-30 09:23:26,009 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320621194511300011,pre=0.6634113194026248,result=False
+2019-10-30 09:23:26,009 [Thread-837:140470940174080] [DR:35] [facedb:_matchFace] [DEBUG]- label=320621194511300011,pre=0.631853719963503,result=False
+2019-10-30 09:23:26,009 [Thread-837:140470940174080] [DR:62] [facedb:matchFace] [DEBUG]- ('320123198602171212', 0.3924908979356776)
+2019-10-30 09:23:26,009 [Thread-837:140470940174080] [DR:96] [face:checkFace] [DEBUG]- checkface result is 320123198602171212[0.3924908979356776]
+2019-10-30 09:23:26,010 [Thread-837:140470940174080] [DR:121] [doUpload:faceUploadAndCheck] [DEBUG]- face check RET 320123198602171212
+2019-10-30 09:23:26,010 [Thread-837:140470940174080] [DR:124] [doUpload:faceUploadAndCheck] [DEBUG]- ret=320123198602171212
+2019-10-30 09:23:26,010 [Thread-837:140470940174080] [DR:130] [models:queryEngineerNameByIdno] [DEBUG]- [DBQUERY]query engineer by idcode = 320123198602171212
+2019-10-30 09:23:26,010 [Thread-837:140470940174080] [DR:131] [models:queryEngineerNameByIdno] [DEBUG]- terminalId=10:d0:7a:1d:96:f2
+2019-10-30 09:23:26,021 [Thread-837:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.010) SELECT `departterminal`.`id`, `departterminal`.`departId`, `departterminal`.`terminalId`, `departterminal`.`content`, `departterminal`.`mac`, `departterminal`.`bankCode`, `departterminal`.`bigVer`, `departterminal`.`shortVer`, `departterminal`.`departTreeId`, `departterminal`.`lastAccessTime` FROM `departterminal` WHERE `departterminal`.`terminalId` = '10:d0:7a:1d:96:f2'; args=(u'10:d0:7a:1d:96:f2',)
+2019-10-30 09:23:26,023 [Thread-837:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `bankcodetable`.`id`, `bankcodetable`.`bankCode`, `bankcodetable`.`tableName`, `bankcodetable`.`mark`, `bankcodetable`.`name`, `bankcodetable`.`content` FROM `bankcodetable` WHERE (`bankcodetable`.`bankCode` = 'NJCB' AND `bankcodetable`.`mark` = 'MAINTER'); args=(u'NJCB', 'MAINTER')
+2019-10-30 09:23:26,023 [Thread-837:140470940174080] [DR:134] [models:queryEngineerNameByIdno] [DEBUG]- tablename=MaintenancePerson
+2019-10-30 09:23:26,025 [Thread-837:140470940174080] [DR:136] [models:queryEngineerNameByIdno] [DEBUG]- <class 'drers.models.MaintenancePerson'>
+2019-10-30 09:23:26,026 [Thread-837:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.001) SELECT `MaintenancePerson`.`id`, `MaintenancePerson`.`name`, `MaintenancePerson`.`idno`, `MaintenancePerson`.`mobile`, `MaintenancePerson`.`wechat`, `MaintenancePerson`.`img`, `MaintenancePerson`.`content`, `MaintenancePerson`.`openid`, `MaintenancePerson`.`status`, `MaintenancePerson`.`facilitatorId` FROM `MaintenancePerson` WHERE `MaintenancePerson`.`idno` = '320123198602171212'; args=('320123198602171212',)
+2019-10-30 09:23:26,027 [Thread-837:140470940174080] [DR:138] [models:queryEngineerNameByIdno] [DEBUG]- [1]query size = 1
+2019-10-30 09:23:26,027 [Thread-837:140470940174080] [DR:140] [models:queryEngineerNameByIdno] [DEBUG]- [DBQUERY]name=王志林
+2019-10-30 09:23:26,028 [Thread-837:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "POST /faceCheck/?idcode=null&terminalId=10:d0:7a:1d:96:f2&personType=ENG HTTP/1.1" 200 132
+2019-10-30 09:23:26,222 [Thread-838:140470940174080] [DR:13] [voice:getVoice] [DEBUG]- request in 
+2019-10-30 09:23:26,232 [Thread-838:140470940174080] [DR:14] [voice:getVoice] [DEBUG]- POST
+2019-10-30 09:23:26,232 [Thread-838:140470940174080] [DR:17] [voice:getVoice] [DEBUG]- 智能运维平台识别您是王志林
+2019-10-30 09:23:26,243 [Thread-838:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT @@SQL_AUTO_IS_NULL; args=None
+2019-10-30 09:23:26,244 [Thread-838:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT VERSION(); args=None
+2019-10-30 09:23:26,245 [Thread-838:140470940174080] [django.db.backends:90] [utils:execute] [DEBUG]- (0.000) SELECT `commToken`.`id`, `commToken`.`platform`, `commToken`.`token`, `commToken`.`fetchTime`, `commToken`.`expires` FROM `commToken` WHERE `commToken`.`platform` = 'baidu'; args=('baidu',)
+2019-10-30 09:23:26,246 [Thread-838:140470940174080] [DR:20] [voice:getVoice] [DEBUG]- token is 25.5074604d656e076c5535cf4de2d8598c.315360000.1886118348.282335-11123308
+2019-10-30 09:23:26,246 [Thread-838:140470940174080] [DR:22] [voice:getVoice] [DEBUG]- url=http://tsn.baidu.com/text2audio
+2019-10-30 09:23:26,408 [Thread-838:140470940174080] [DR:40] [voice:getVoice] [DEBUG]- {'url': '/resour/voice/df4eb456-fab3-11e9-87f2-6c92bf4f8706.mp3', 'ret': 'succ'}
+2019-10-30 09:23:26,408 [Thread-838:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "POST /getVoice/ HTTP/1.1" 200 80
+2019-10-30 09:23:26,570 [Thread-839:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "GET /resour/voice/df4eb456-fab3-11e9-87f2-6c92bf4f8706.mp3 HTTP/1.1" 200 8496
+2019-10-30 09:23:26,750 [Thread-840:140470940174080] [django.server:131] [basehttp:log_message] [INFO]- "GET /resour/voice/df4eb456-fab3-11e9-87f2-6c92bf4f8706.mp3 HTTP/1.1" 200 8496
+2019-10-30 10:09:39,809 [Thread-842:140470940174080] [django.server:131] [basehttp:log_message] [WARNING]- "GET / HTTP/1.1" 404 2914
