@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>父神之锤</title>
+    <link href="/resour/js/main.css" rel="stylesheet" type="text/css" />
+ 
+    <link href="/resour/js/test.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        .hasBeenAnswer {
+            background: #5d9cec;
+            color: #fff;
+        }
+
+        .reading h2 {
+            width: 100%;
+            margin: 20px 0 70px;
+            text-align: center;
+            line-height: 2;
+            font-size: 20px;
+            color: #59595b;
+        }
+
+            .reading h2 a {
+                text-decoration: none;
+                color: #59595b;
+                font-size: 20px;
+            }
+
+                .reading h2 a:hover {
+                    color: #2183f1;
+                }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <!--nr start-->
+        <div class="test_main">
+            <div class="nr_left">
+                <div class="test">
+                    <form action="" method="post">
+                        <div class="test_title">
+                            <p class="test_time">
+                                <i class="icon iconfont">&#xe6fb;</i><b class="alt-1">2020-03-21T22:00:00</b>
+                            </p>
+                            {% if question.index > 1 %}
+                            <font><input type="button" name="test_preview" value="上一题"></font>
+                            {% endif %}
+                            
+                            {% if question.index < test.totalIndex %}
+                            <font><input type="button" name="test_next" value="下一题"></font>
+                            {% endif %}
+                            <font><input type="button" name="test_jiaojuan" value="交卷"></font>
+                        </div>
+
+                        <div class="test_content">
+                            <div class="test_content_title">
+                                <h2>{{question.typeName}}</h2>
+                                <p>
+                                    
+                                </p>
+                            </div>
+                        </div>
+                        <div class="test_content_nr">
+                            <ul>
+
+                                <li id="qu_0_0">
+                                    <div class="test_content_nr_tt">
+                                        <i>{{question.index}}</i><span>({{question.totalScore}}分)</span><font>{{question.label}}（  ）</font><b class="icon iconfont">&#xe881;</b>
+                                    </div>
+
+                                    <div class="test_content_nr_main">
+                                        <ul>
+
+                                            <li class="option">
+
+                                                <input type="radio" class="radioOrCheck" name="answer1"
+                                                       id="answer_a" />
+
+
+                                                <label for="0_answer_1_option_1">
+                                                    A.
+                                                    <p class="ue" style="display: inline;">{{question.answera}}</p>
+                                                </label>
+                                            </li>
+
+                                            <li class="option">
+
+                                                <input type="radio" class="radioOrCheck" name="answer1"
+                                                       id="answer_b" />
+
+
+                                                <label for="0_answer_1_option_2">
+                                                    B.
+                                                    <p class="ue" style="display: inline;">{{question.answerb}}</p>
+                                                </label>
+                                            </li>
+
+                                            <li class="option">
+
+                                                <input type="radio" class="radioOrCheck" name="answer1"
+                                                       id="answer_c" />
+
+
+                                                <label for="0_answer_1_option_3">
+                                                    C.
+                                                    <p class="ue" style="display: inline;">{{question.answerc}}</p>
+                                                </label>
+                                            </li>
+
+                                            <li class="option">
+
+                                                <input type="radio" class="radioOrCheck" name="answer1"
+                                                       id="answer_d" />
+
+
+                                                <label for="0_answer_1_option_4">
+                                                    D.
+                                                    <p class="ue" style="display: inline;">{{question.answerd}}</p>
+                                                </label>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                
+
+                            </ul>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            
+
+
+        <div class="foot"></div>
+
+       
+    </div>
+    <script src="/resour/js/jquery.min.js"></script>
+    <script src="/resour/js/jquery.mobile-1.4.5.min.js"></script>
+    <!--时间js-->
+    <script src="/resour/js/jquery.countdown.js"></script>
+    <script>
+        window.jQuery(function ($) {
+            "use strict";
+
+            $('time').countDown({
+                with_separators: false
+            });
+            $('.alt-1').countDown({
+                css_class: 'countdown-alt-1'
+            });
+            $('.alt-2').countDown({
+                css_class: 'countdown-alt-2'
+            });
+
+        });
+
+
+        $(function () {
+            
+        });
+    </script>
+
+
+</body>
+
+</html>
+
+

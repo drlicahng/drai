@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'models',
     'drers',
     'drconf',
+    'controllers',
 )
 
 SITE_ID=1
@@ -67,16 +68,20 @@ WSGI_APPLICATION = 'wsgi.application'
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 DATABASES = {
 	'default':{
+		'ENGINE':None,
+	},
+	'mysql':{
 		'ENGINE':'django.db.backends.mysql',
-		'NAME': 'njweb',
+		'NAME': 'lcdb',
 		'USER': 'root',
-		'PASSWORD': 'Root321',
+		'PASSWORD': 'lichang803',
 		'HOST': 'localhost',
 		'PORT': '3306',
 	}
 }
 
-
+#from mongoengine import connect
+#connect('lcdb')
 
 TEMPLATES = [
     {
@@ -136,7 +141,7 @@ LOGGING = {
         'DRH': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': '/home/drers01/logs/serv/dr.log',    
+            'filename': '/home/lichang/logs/serv/ai.log',    
             'maxBytes': 1024*1024*5,                 
             'backupCount': 5,                         
             'formatter':'standard',                  
@@ -144,7 +149,7 @@ LOGGING = {
         'error': {
             'level':'ERROR',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': '/home/drers01/logs/serv/error.log',
+            'filename': '/home/lichang/logs/serv/aierror.log',
             'maxBytes':1024*1024*5,
             'backupCount': 5,
             'formatter':'standard',
@@ -157,7 +162,7 @@ LOGGING = {
         'request_handler': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename': '/home/drers01/logs/serv/script.log', 
+            'filename': '/home/lichang/logs/serv/aiscript.log', 
             'maxBytes': 1024*1024*5, 
             'backupCount': 5,
             'formatter':'standard',
@@ -165,7 +170,7 @@ LOGGING = {
         'scprits_handler': {
             'level':'DEBUG',
             'class':'logging.handlers.RotatingFileHandler',
-            'filename':'/home/drers01/logs/serv/script.log', 
+            'filename':'/home/lichang/logs/serv/aiscript.log', 
             'maxBytes': 1024*1024*5, 
             'backupCount': 5,
             'formatter':'standard',

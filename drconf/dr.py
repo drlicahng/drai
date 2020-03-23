@@ -6,7 +6,7 @@ datefmt = '%Y-%m-%d %H:%M:%S'
 TAG='DR'
 
 #web
-PROJECT_BASE= '/home/drers01/python/drai'
+PROJECT_BASE= '/home/lichang/AI/lcai'
 
 #face
 FACE_BASE='%s'%PROJECT_BASE

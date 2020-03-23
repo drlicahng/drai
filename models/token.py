@@ -3,7 +3,7 @@ from drconf import dr
 
 class Token(models.Model):
 	class Meta:
-		db_table= "commToken"
+		db_table= "token"
 	
 	tokenId = models.AutoField(primary_key=True , db_column='id')
 	platform = models.CharField(max_length=60)

@@ -1,5 +1,5 @@
 DBSERVER = 'localhost'
 DBUSER = 'root'
-DBPASS = 'Root321'
-DBNAME = 'njweb'
+DBPASS = 'lichang803'
+DBNAME = 'lcdb'
 

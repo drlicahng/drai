@@ -8,6 +8,8 @@ from drers import models , utils as du
 import pandas as pd
 import numpy as np
 
+from services.edu import ques
+
 log = logging.getLogger(dr.TAG) 
 
 if __name__ == "__main__":
@@ -42,6 +44,11 @@ if __name__ == "__main__":
 		elif param[0].find('learnNew')>=0:
 			ret = du.learnNewFace('10:d0:7a:1d:97:3c','422202198006160057','/faceimg/04c59ed4-761b-11e9-8c98-6c92bf4f8706.jpg','EMP')
 			print ret
+		elif param[0].find('mongodb')>=0:
+		
+			for v in ques.nextQuestion():
+				print v.author.name
+
 	elif cmdFunc.find('dlib')>=0:#dlib function test cmd
 		param.append(sys.argv[2])
 		print param[0]
